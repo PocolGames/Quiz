@@ -1,0 +1,20 @@
+footer {
+    font-size: 12px; /* 기본 폰트 크기 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    position: fixed; /* 고정 위치 */
+    bottom: 0; /* 최하단에 위치 */
+    left: 0; /* 왼쪽 끝에서 시작 */
+    width: 100%; /* 전체 너비 */
+    padding: 10px 0; /* 상하 여백 */
+    background-color: #f8f8f8; /* 배경 색 */
+    color: #333; /* 텍스트 색 */
+  }
+  
+  /* 모바일 화면에서 폰트 크기 및 여백 조정 */
+  @media (max-width: 600px) {
+    footer {
+      font-size: 10px; /* 모바일에서는 폰트 크기를 더 작게 */
+      padding: 8px 0; /* 모바일에서 여백을 조금 줄임 */
+    }
+  }
+  
