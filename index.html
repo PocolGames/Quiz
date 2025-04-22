@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>퀴즈 웹사이트</title>
+  <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding: 20px;
+        max-width: 600px;
+        margin: auto;
+      }
+      .question-box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      h2 {
+        margin-top: 0;
+        font-size: 18px;
+      }
+      .options {
+        list-style: none;
+        padding: 0;
+      }
+      .options li {
+        margin: 10px 0;
+      }
+      button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        background: #007bff;
+        color: white;
+        cursor: pointer;
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    
+      .result {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    
+      /* 모바일 대응 */
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+          max-width: 100%;
+        }
+        .question-box {
+          padding: 15px;
+        }
+        h2 {
+          font-size: 16px;
+        }
+        button {
+          font-size: 12px;
+          padding: 8px 16px;
+        }
+        .result {
+          font-size: 14px;
+        }
+      }
+    
+      /* 작은 모바일 화면 대응 */
+      @media (max-width: 480px) {
+        h2 {
+          font-size: 14px;
+        }
+        button {
+          font-size: 10px;
+          padding: 6px 12px;
+        }
+        .result {
+          font-size: 12px;
+        }
+      }
+  </style>
+</head>
+<body>
+
+  <div class="question-box" id="quiz-container">
+    <h2 id="question">문제가 여기에 표시됩니다</h2>
+    <ul class="options" id="options">
+      <!-- 선택지가 여기에 들어감 -->
+    </ul>
+    <div class="result" id="result"></div>
+    <button id="next-button" style="display:none;">다음 문제</button>
+    <button id="restart-button" style="display:none;">다시 시작</button>
+  </div>
+
+  <script>
+
+    // 문제 배열을 랜덤으로 섞는 함수
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    let quizData = [
+      {
+        question: "데이터통신에 대한 다음 설명 중 적합하지 않은 것은?",
+        options: [
+          "데이터통신이란 통신 프로토콜에 따라 데이터로 표현되는 정보를 교환하는 과정이다.", 
+          "네트워크 시스템은 규모 및 구성 목적에 따라 다양하게 구분할 수 있다.", 
+          "데이터통신은 데이터 처리 및 전송장치와 교환장치 등을 연결해 구성된 네트워크 시스템을 통해 이루어진다.", 
+          "다중화 장치는 메시지가 전달되는 실제 전송로를 의미한다."
+        ],
+        answer: 4
+      },
+      {
+        question: "표준화는 기술 혹은 프로세서 간의 호환성을 유지하기 위해 필요하다. <br>권위를 인정받는 단체나 조직에서 승인하지는 않았지만 일반에 널리 사용되는 표준을 나타내는 용어는?",
+        options: [
+          "EIA 표준", 
+          "De facto 표준", 
+          "De jure 표준", 
+          "Regulatory 표준"
+        ],
+        answer: 2
+      },
+      {
+        question: "데이터통신 네트워크 시스템을 구성하는 5가지 필수 요소로 가장 적합하지 않은 것은?",
+        options: [
+          "전송장치", 
+          "수신장치", 
+          "서비스", 
+          "프로토콜"
+        ],
+        answer: 3
+      },
+      {
+        question: "IPv4 인터넷 프로토콜에서는 장소 이동에 따른 IP 주소 재입력 등 통신 환경을 일일이 설정해야 했으나, 이러한 불편을 해소시켜주는 IPv6의 기능은?",
+        options: [
+          "데이터 압축 기능",
+          "주소 자동설정 기능",
+          "데이터 공유 기능",
+          "암호화 기능"
+        ],
+        answer : 2
+      },
+      {
+        question: "광범위한 지역을 수용하며 한 국가 내의 도시와 도시 혹은 국가와 국가를 연결하려는 목적으로 수백~수천km 범위를 포함할 수 있게 구성하는 네트워크 시스템을 나타내는 것은?",
+        options: [
+          "LAN",
+          "MAN",
+          "WAN",
+          "RAN"
+        ],
+        answer: 3
+      },
+      {
+        question: "10m 이내의 개인 활동 공간을 중심으로 장치를 연결하기 위한 네트워크에서 사용되는 기술이 아닌 것은?",
+        options: [
+          "서브 네트워크",
+          "UWB",
+          "지그비",
+          "블루투스"
+        ],
+        answer: 1
+      },
+      {
+        question: "여러 나라의 표준 제정 단체 대표들로 이루어진 국제적인 기구로, 핵에너지, 데이터 처리, 경제 분야 등 광범위한 분야에 걸쳐 수백 개 이상의 표준안을 제정했으며 표준 개방형 통신 네트워크에 대한 제반 사항을 규정한 OSI를 제정한 기구는?",
+        options: [
+          "ISO",
+          "ANSI",
+          "EIA",
+          "NIST"
+        ],
+        answer: 1
+      },
+      {
+        question: "미연방 정부의 상무부 산하기관으로, 미국 정부의 보안 요구사항을 통제하는 정보처리 표준규격인 FIPS, 데이터 보안 표준규격인 DES와 AES등을 제정한 기구는?",
+        options: [
+          "ITU",
+          "NIST",
+          "ANSI",
+          "ISO"
+        ],
+        answer: 2
+      },
+      {
+        question: "인터넷의 운영, 관리, 개발에 대해 협의하고 프로토콜과 구조적인 사안들을 분석하며 자발적 참여와 논의를 통해 인터넷 관련 기술표준 및 절차를 마련하는 기구는?",
+        options: [
+          "IAB",
+          "IETF",
+          "IESG",
+          "ISOC"
+        ],
+        answer: 2
+      },
+      {
+        question: "RFC 문서에 대한 다음 설명 중 적합하지 않은 것은?",
+        options: [
+          "모든 RFC 문서가 인터넷 표준이 되는 것은 아니다.",
+          "대부분 인터넷에서 기술을 구현할 때 필요한 상세 절차와 기본 틀을 제공하는 내용을 담고 있다.",
+          "표준 트랙, 정보 관련, 실험 관련, 역사 관련의 네 가지 상태로 분류된다.",
+          "수정이 필요할 경우 별도의 절차를 거쳐야 하며, 이때 기존의 문서는 동일한 일련번호의 새로운 문서로 교체된다."
+        ],
+        answer: 4
+      }
+    ];
+
+    quizData = shuffleArray(quizData);
+
+    let currentQuestion = 0;
+    let correctCount = 0;
+    let incorrectCount = 0;
+
+    const questionEl = document.getElementById('question');
+    const optionsEl = document.getElementById('options');
+    const resultEl = document.getElementById('result');
+    const nextBtn = document.getElementById('next-button');
+    const restartBtn = document.getElementById('restart-button');
+
+    function loadQuestion() {
+      const q = quizData[currentQuestion];
+      questionEl.innerHTML = q.question;  // ✅ 여기를 수정!
+      optionsEl.innerHTML = '';
+      resultEl.textContent = '';
+      nextBtn.style.display = 'none';
+
+      q.options.forEach((option, index) => {
+        const li = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.textContent = `${index + 1}. ${option}`;
+        btn.onclick = () => checkAnswer(index + 1);
+        li.appendChild(btn);
+        optionsEl.appendChild(li);
+      });
+    }
+
+
+    function checkAnswer(selected) {
+      const correctAnswer = quizData[currentQuestion].answer;
+      if (selected === correctAnswer) {
+        resultEl.textContent = '정답입니다!';
+        correctCount++;
+      } else {
+        resultEl.textContent = `오답입니다! 정답은 ${correctAnswer}번입니다.`;
+        incorrectCount++;
+      }
+
+      // 모든 버튼 비활성화
+      const buttons = document.querySelectorAll('#options button');
+      buttons.forEach(btn => btn.disabled = true);
+
+      nextBtn.style.display = 'inline-block';
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
+    });
+
+    restartBtn.addEventListener('click', () => {
+      currentQuestion = 0;
+      correctCount = 0;
+      incorrectCount = 0;
+      quizData = shuffleArray(quizData); // ← 여기에 추가!
+      restartBtn.style.display = 'none';
+      loadQuestion();
+    });
+
+
+    function showResult() {
+      questionEl.textContent = '퀴즈 완료!';
+      optionsEl.innerHTML = '';
+      resultEl.innerHTML = `정답: ${correctCount}개<br>오답: ${incorrectCount}개`;
+      nextBtn.style.display = 'none';
+      restartBtn.style.display = 'inline-block';
+    }
+
+    // 첫 문제 로딩
+    loadQuestion();
+  </script>
+
+</body>
+</html>
