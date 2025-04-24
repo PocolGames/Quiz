@@ -70,4 +70,3 @@ const rawQuizData = [
     { question: "strict", answer: "엄격한" },
     { question: "global warming", answer: "지구 온난화" }
   ];
-  
