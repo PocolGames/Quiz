@@ -8,27 +8,6 @@
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/footer.css">
-  <style>
-    button{
-        margin-top: 0px;
-    }
-    h1 {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        display: flex;
-        justify-content: center;  /* 가로 중앙 정렬 */
-        align-items: center;      /* 세로 중앙 정렬 */
-        flex-direction: column; 
-    }
-    h2 {
-        margin-top: 20px;
-        margin-bottom: 0px;
-    }
-    p {
-        margin-top: 0px;
-        margin-bottom: 4px;
-    }
-  </style>
 </head>
 <body>
     <nav>
@@ -42,17 +21,39 @@
     <div class="question-box" id="quiz-container">
         <h1>문제 목록</h1>
         <hr>
-        <h2>컴퓨터학부 초연결사회의 데이터통신과 네트워킹 연습문제 1장 ~ 6장</h2>
-        <p>고정형</p>
-        <button onclick="location.href='cs_network.html'">문제 풀기</button>
         
-        <h2>2025년 컴퓨터학부 웹프로그래밍 1학기 중간고사 pdf 정리</h2>
-        <p>모두 랜덤</p>
-        <button onclick="location.href='cs_webprogramming.html'">문제 풀기</button>
+        <!-- 목차 시작 -->
+        <div class="table-of-contents">
+          <h2>목차</h2>
+          <ul>
+            <li><a href="#computer-science">컴퓨터학부</a></li>
+            <li><a href="#english">영어</a></li>
+          </ul>
+        </div>
+        <hr>
+        <!-- 목차 끝 -->
         
-        <h2>해커스 토익 기출 보카 1 ~ 70</h2>
-        <p>암기 카드</p>
-        <button onclick="location.href='voca_hackers_1.html'">문제 풀기</button>
+        <!-- 컴퓨터학부 섹션 -->
+        <div id="computer-science">
+          <h2 class="section-title">컴퓨터학부</h2>
+          
+          <h3>컴퓨터학부 초연결사회의 데이터통신과 네트워킹 연습문제 1장 ~ 6장</h3>
+          <span class="card-type">고정형</span>
+          <button onclick="location.href='quiz_page/cs_network.html'">문제 풀기</button>
+          
+          <h3>2025년 컴퓨터학부 웹프로그래밍 1학기 중간고사 pdf 정리</h3>
+          <span class="card-type">모두 랜덤</span>
+          <button onclick="location.href='quiz_page/cs_webprogramming.html'">문제 풀기</button>
+        </div>
+        
+        <!-- 영어 섹션 -->
+        <div id="english">
+          <h2 class="section-title english-section">영어</h2>
+          
+          <h3>해커스 토익 기출 보카 1 ~ 70</h3>
+          <span class="card-type">암기 카드</span>
+          <button onclick="location.href='quiz_page/voca_hackers_1.html'">문제 풀기</button>
+        </div>
         
 
     <footer>
