@@ -7,6 +7,7 @@
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  flex: 1; /* 컨텐츠 영역이 늘어나도록 설정 */
 }
 
 /* 퀴즈 문제 */
@@ -100,6 +101,7 @@
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   text-align: center;
+  flex: 1; /* 컨텐츠 영역이 늘어나도록 설정 */
 }
 
 .card-front {

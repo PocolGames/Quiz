@@ -7,6 +7,7 @@ footer {
   font-size: 14px;
   border-top: 1px solid #e9ecef;
   width: 100%;
+  margin-top: auto; /* 이 부분이 flex 레이아웃에서 푸터를 하단에 고정시킴 */
 }
 
 .footer-container {
