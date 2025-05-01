@@ -1,136 +1,293 @@
+/* 기본 스타일 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 콘텐츠 컨테이너 */
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 80px auto 60px;
+  padding: 0 20px;
+  flex: 1;
+}
+
+/* 메인 콘텐츠 영역 */
+.content {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin-bottom: 30px;
+}
+
+/* 제목 스타일 */
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin: 30px 0 15px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #444;
+  margin: 20px 0 10px;
+}
+
+/* 문단 스타일 */
+p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* 구분선 */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #eee;
+  margin: 30px 0;
+}
+
+/* 목차 스타일 */
+.table-of-contents {
+  background-color: #f8f9fa;
+  border-left: 3px solid #6b90da;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+
+.table-of-contents h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.table-of-contents ul {
+  list-style-type: none;
+}
+
+.table-of-contents li {
+  margin: 8px 0;
+  padding-left: 15px;
+  position: relative;
+}
+
+.table-of-contents li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #6b90da;
+}
+
+.table-of-contents a {
+  text-decoration: none;
+  color: #4a6da7;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.table-of-contents a:hover {
+  color: #2c4a7c;
+  text-decoration: underline;
+}
+
+/* 섹션 제목 */
+.section-title {
+  font-size: 24px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* 영어 섹션 */
+.english-section {
+  margin-top: 40px;
+}
+
+/* 카드 유형 레이블 */
+.card-type {
+  display: inline-block;
+  background-color: #f0f2f5;
+  color: #4a6da7;
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  border: 1px solid #e0e5ec;
+}
+
+/* 버튼 스타일 */
+button {
+  display: block;
+  width: 100%;
+  background-color: #4a6da7;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #385990;
+}
+
+/* 항목 카드 */
+.item-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.2s;
+}
+
+.item-card:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* 모바일 대응 */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+    margin: 70px auto 50px;
   }
-  .question-box {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin: 100px auto 50px;
+  
+  .content {
+    padding: 25px 20px;
+    border-radius: 6px;
   }
+  
   h1 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    display: flex;
-    justify-content: center;  /* 가로 중앙 정렬 */
-    align-items: center;      /* 세로 중앙 정렬 */
-    flex-direction: column; 
-  }
-  h2 {
-    margin-top: 20px;
-    margin-bottom: 0px;
-    font-size: 18px;
-  }
-  h3 {
-    margin-top: 15px;
-    margin-bottom: 5px;
-    color: #444;
-  }
-  p {
-    margin-top: 0px;
-    margin-bottom: 8px;
-    font-size: 0.9em;
-    color: #666;
-  }
-  .card-type {
-    display: inline-block;
-    background-color: #f0f0f0;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 0.85em;
-    color: #555;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-  }
-  .table-of-contents {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 5px;
+    font-size: 24px;
+    padding-bottom: 12px;
     margin-bottom: 20px;
   }
-  .table-of-contents ul {
-    list-style-type: none;
-    padding-left: 10px;
+  
+  h2 {
+    font-size: 20px;
+    margin: 25px 0 12px;
   }
-  .table-of-contents li {
-    margin: 8px 0;
+  
+  h3 {
+    font-size: 16px;
+    margin: 16px 0 8px;
   }
-  .table-of-contents a {
-    text-decoration: none;
-    color: #0066cc;
-    font-weight: bold;
+  
+  .table-of-contents {
+    padding: 15px;
+    margin-bottom: 25px;
   }
-  .section-title {
-    font-size: 1.5em; 
-    color: #333; 
-    border-bottom: 2px solid #ddd; 
-    padding-bottom: 5px;
-  }
-  .english-section {
-    margin-top: 30px;
-  }
-  .options {
-    list-style: none;
-    padding: 0;
-  }
-  .options li {
-    margin: 10px 0;
-  }
+  
   button {
-    margin-top: 10px;
-    padding: 10px 20px;
+    padding: 10px 14px;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .item-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+    margin: 60px auto 40px;
+  }
+  
+  .content {
+    padding: 20px 15px;
+    border-radius: 4px;
+  }
+  
+  h1 {
+    font-size: 22px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+  
+  h2 {
+    font-size: 18px;
+    margin: 20px 0 10px;
+  }
+  
+  h3 {
+    font-size: 15px;
+    margin: 12px 0 6px;
+  }
+  
+  p {
     font-size: 14px;
-    border: none;
-    border-radius: 5px;
-    background: #007bff;
-    color: white;
-    cursor: pointer;
-    text-align: left;
-    width: 100%;
-    box-sizing: border-box;
+    margin-bottom: 15px;
   }
-
-  .result {
-    margin-top: 20px;
-    font-weight: bold;
+  
+  .table-of-contents {
+    padding: 12px;
+    margin-bottom: 20px;
   }
-
-  /* 모바일 대응 */
-  @media (max-width: 768px) {
-    body {
-      padding: 10px;
-      max-width: 100%;
-    }
-    .question-box {
-      padding: 15px;
-    }
-    h2 {
-      font-size: 16px;
-    }
-    button {
-      font-size: 13px;
-      padding: 10px 14px;
-    }
-    .result {
-      font-size: 14px;
-    }
+  
+  .table-of-contents h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
   }
-
-  /* 작은 모바일 화면 대응 */
-  @media (max-width: 480px) {
-    h2 {
-      font-size: 14px;
-    }
-    button {
-      font-size: 12px;
-      padding: 8px 10px;
-    }
-    .result {
-      font-size: 13px;
-    }
+  
+  .table-of-contents li {
+    margin: 6px 0;
+    font-size: 14px;
   }
+  
+  button {
+    padding: 10px 12px;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .card-type {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+  
+  .item-card {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .section-title {
+    font-size: 20px;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+  }
+}

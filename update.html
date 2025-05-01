@@ -2,43 +2,126 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>업데이트 내역</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/footer.css">
   <style>
-      p {
-        margin-top: 0px;
+    .update-item {
+      padding: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .update-date {
+      font-size: 16px;
+      font-weight: 600;
+      color: #4a6da7;
+      margin-bottom: 8px;
+    }
+    
+    .update-item p {
+      margin: 0;
+    }
+    
+    .starred {
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .starred:before {
+      content: "⭐";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .update-item {
+        padding: 15px;
+        margin-bottom: 15px;
       }
-      h2 {
-        margin-top: 0px;
-        margin-bottom: 0px;
+      
+      .update-date {
+        font-size: 15px;
+        margin-bottom: 6px;
       }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .update-item {
+        padding: 12px;
+        margin-bottom: 12px;
+      }
+      
+      .update-date {
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      
+      .update-item p {
+        font-size: 14px;
+      }
+      
+      .starred {
+        padding-left: 20px;
+      }
+    }
   </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-center">
-            <a href="index.html">홈</a>
-            <a href="update.html">업데이트 내역</a>
-            <a href="inquires.html">문의</a>
-        </div>
-      </nav>
+  <!-- 네비게이션 -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">문제 은행</a>
+      <div class="nav-center">
+        <a href="index.html">홈</a>
+        <a href="update.html">업데이트 내역</a>
+        <a href="inquires.html">문의</a>
+      </div>
+    </div>
+  </nav>
 
-      <div class="question-box" id="quiz-container">
-        <h2>2025-04-25 01:00</h2>
+  <!-- 메인 콘텐츠 -->
+  <div class="container">
+    <div class="content">
+      <h1>업데이트 내역</h1>
+      
+      <div class="update-item">
+        <p class="update-date">2025-04-25 01:00</p>
         <p>테스트용 영단어 암기 카드 형식 추가</p>
-        <h2>2025-04-24 00:40</h2>
+      </div>
+      
+      <div class="update-item">
+        <p class="update-date">2025-04-24 00:40</p>
         <p>웹 프로그래밍 문제 추가</p>
-        <h2>2025-04-23 15:13</h2>
-        <p>교수님이 말해주신 시험 문제 ⭐ 추가</p>
-        <h2>2025-04-23 14:50</h2>
+      </div>
+      
+      <div class="update-item">
+        <p class="update-date">2025-04-23 15:13</p>
+        <p class="starred">교수님이 말해주신 시험 문제 추가</p>
+      </div>
+      
+      <div class="update-item">
+        <p class="update-date">2025-04-23 14:50</p>
         <p>문제 번호 입력</p>
+      </div>
+    </div>
+  </div>
 
-    <footer>
-        &copy; 2025 세명대학교 게임 개발 동아리 프리릴리즈. All rights reserved.</div>
-    </footer>
+  <!-- 푸터 -->
+  <footer>
+    <div class="footer-container">
+      <p class="footer-text">&copy; 2025 세명대학교 게임 개발 동아리 프리릴리즈. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>

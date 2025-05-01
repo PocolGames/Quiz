@@ -2,62 +2,81 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>문제 은행 웹사이트</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-    <nav>
+  <!-- 네비게이션 -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">문제 은행</a>
       <div class="nav-center">
         <a href="index.html">홈</a>
         <a href="update.html">업데이트 내역</a>
         <a href="inquires.html">문의</a>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <div class="question-box" id="quiz-container">
-        <h1>문제 목록</h1>
-        <hr>
+  <!-- 메인 콘텐츠 -->
+  <div class="container">
+    <div class="content">
+      <h1>문제 목록</h1>
+      
+      <!-- 목차 시작 -->
+      <div class="table-of-contents">
+        <h2>목차</h2>
+        <ul>
+          <li><a href="#computer-science">컴퓨터학부</a></li>
+          <li><a href="#english">영어</a></li>
+        </ul>
+      </div>
+      
+      <!-- 컴퓨터학부 섹션 -->
+      <section id="computer-science">
+        <h2 class="section-title">컴퓨터학부</h2>
         
-        <!-- 목차 시작 -->
-        <div class="table-of-contents">
-          <h2>목차</h2>
-          <ul>
-            <li><a href="#computer-science">컴퓨터학부</a></li>
-            <li><a href="#english">영어</a></li>
-          </ul>
-        </div>
-        <hr>
-        <!-- 목차 끝 -->
-        
-        <!-- 컴퓨터학부 섹션 -->
-        <div id="computer-science">
-          <h2 class="section-title">컴퓨터학부</h2>
-          
+        <div class="item-card">
           <h3>컴퓨터학부 초연결사회의 데이터통신과 네트워킹 연습문제 1장 ~ 6장</h3>
           <span class="card-type">고정형</span>
           <button onclick="location.href='quiz_page/cs_network.html'">문제 풀기</button>
-          
-          <h3>2025년 컴퓨터학부 웹프로그래밍 1학기 중간고사 pdf 정리</h3>
+        </div>
+        
+        <div class="item-card">
+          <h3>2025년 컴퓨터학부 웹프로그래밍 1학기 중간고사 PDF 정리</h3>
           <span class="card-type">모두 랜덤</span>
           <button onclick="location.href='quiz_page/cs_webprogramming.html'">문제 풀기</button>
         </div>
+      </section>
+      
+      <!-- 영어 섹션 -->
+      <section id="english">
+        <h2 class="section-title english-section">영어</h2>
         
-        <!-- 영어 섹션 -->
-        <div id="english">
-          <h2 class="section-title english-section">영어</h2>
-          
+        <div class="item-card">
           <h3>해커스 토익 기출 보카 1 ~ 70</h3>
           <span class="card-type">암기 카드</span>
           <button onclick="location.href='quiz_page/voca_hackers_1.html'">문제 풀기</button>
         </div>
-        
+      </section>
+    </div>
+  </div>
 
-    <footer>
-      &copy; 세명대학교 게임 개발 동아리 프리릴리즈. All rights reserved.</div>
-    </footer>
+  <!-- 푸터 -->
+  <footer>
+    <div class="footer-container">
+      <p class="footer-text">&copy; 2025 세명대학교 게임 개발 동아리 프리릴리즈. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>

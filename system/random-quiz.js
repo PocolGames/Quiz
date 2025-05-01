@@ -48,16 +48,25 @@ function loadQuestion() {
 
   q.options.forEach((opt, idx) => {
     const li = document.createElement('li');
-    const btn = document.createElement('button');
-    btn.textContent = `${idx + 1}. ${opt}`;
-    btn.onclick = () => checkAnswer(idx + 1);
-    li.appendChild(btn);
+    li.textContent = `${idx + 1}. ${opt}`;
+    li.onclick = () => checkAnswer(idx + 1, li);
     optionsEl.appendChild(li);
   });
 }
 
-function checkAnswer(selected) {
+function checkAnswer(selected, selectedElement) {
   const correctAnswer = quizData[currentQuestion].answer;
+  
+  // 모든 선택지를 순회하며 클래스 추가
+  const options = document.querySelectorAll('#options li');
+  options.forEach((option, index) => {
+    if (index + 1 === correctAnswer) {
+      option.classList.add('correct');
+    } else if (index + 1 === selected) {
+      option.classList.add('incorrect');
+    }
+  });
+  
   if (selected === correctAnswer) {
     resultEl.textContent = '정답입니다!';
     correctCount++;
@@ -66,7 +75,11 @@ function checkAnswer(selected) {
     incorrectCount++;
   }
 
-  document.querySelectorAll('#options button').forEach(btn => btn.disabled = true);
+  // 모든 선택지 클릭 비활성화
+  options.forEach(option => {
+    option.style.pointerEvents = 'none';
+  });
+
   nextBtn.style.display = 'inline-block';
 }
 

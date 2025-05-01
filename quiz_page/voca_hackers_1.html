@@ -2,36 +2,54 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>해커스 기출 토익 보카 1</title>
-  <link rel="stylesheet" href="../css/main.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/quiz.css">
   <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-center">
-          <a href="../index.html">홈</a>
-          <a href="../update.html">업데이트 내역</a>
-          <a href="../inquires.html">문의</a>
-        </div>
-    </nav>
+  <!-- 네비게이션 -->
+  <nav>
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">문제 은행</a>
+      <div class="nav-center">
+        <a href="../index.html">홈</a>
+        <a href="../update.html">업데이트 내역</a>
+        <a href="../inquires.html">문의</a>
+      </div>
+    </div>
+  </nav>
 
-    <footer>
-      &copy; 2025 세명대학교 게임 개발 동아리 프리릴리즈. All rights reserved.</div>
-    </footer>
+  <!-- 플래시카드 컨테이너 -->
+  <div class="flashcard-container" id="flashcard-container">
+    <div class="card-counter" id="card-counter"></div>
+    <hr>
+    <h2 class="card-front" id="question">문제가 여기에 표시됩니다</h2>
+    <div class="card-back" id="answer" style="display:none;"></div>
 
-  <div class="question-box" id="flashcard-container">
-      <div class="result" id="card-counter" style="margin-top: 10px; font-size: 14px;"></div>
-      <hr>
-      <h2 id="question">문제가 여기에 표시됩니다</h2>
-      <div class="result" id="answer" style="display:none;"></div>
-
-    <button id="prev-button" style="display:none;">이전 문제</button>
-    <button id="next-button" style="display:none;">다음 문제</button>
-    <button id="show-answer-button">정답 보기</button>
-    <button id="restart-button" style="display:none;">다시 시작</button>
+    <div style="text-align: center;">
+      <button class="quiz-button" id="prev-button" style="display:none;">이전 문제</button>
+      <button class="quiz-button" id="next-button" style="display:none;">다음 문제</button>
+      <button class="quiz-button" id="show-answer-button">정답 보기</button>
+      <button class="quiz-button" id="restart-button" style="display:none;">다시 시작</button>
+    </div>
   </div>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="footer-container">
+      <p class="footer-text">&copy; 2025 세명대학교 게임 개발 동아리 프리릴리즈. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script src="../data/voca-hackers-1.js"></script>
   <script src="../system/flashcard-main.js"></script>
