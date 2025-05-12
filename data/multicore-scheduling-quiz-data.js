@@ -45,7 +45,7 @@ let quizData = [
             "코어 친화성(Core affinity)",
             "CPU 피닝(Pinning)",
             "캐시 친화성(Cache affinity)",
-            "스레드 바인딩(Thread binding)"
+            "Load Balancing"
         ],
         answer: 4
     },
