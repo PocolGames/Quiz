@@ -1,72 +1,207 @@
-const rawQuizData = [
-    { question: "customize", answer: "주문제작하다" },
-    { question: "proper", answer: "올바른, 적절한" },
-    { question: "basically", answer: "기본적으로, 근본적으로" },
-    { question: "highlight", answer: "강조하다, 가장 좋은 부분" },
-    { question: "approach", answer: "접근법, 처리방법" },
-    { question: "insurance", answer: "보험" },
-    { question: "fill out", answer: "작성하다" },
-    { question: "native", answer: "토종의, 출생지의" },
-    { question: "historical", answer: "역사적인" },
-    { question: "mutual", answer: "상호간의, 서로의" },
-    { question: "subside", answer: "진정되다, 가라앉다" },
-    { question: "segment", answer: "부분, 분할하다" },
-    { question: "entertaining", answer: "즐거움을 주는" },
-    { question: "reception", answer: "환영회, 접수처" },
-    { question: "departure", answer: "출발" },
-    { question: "deduct", answer: "공제하다, 감하다" },
-    { question: "demolish", answer: "철거하다" },
-    { question: "recruit", answer: "모집하다, 신입회원" },
-    { question: "consult", answer: "참고하다, 상의하다" },
-    { question: "take effect", answer: "시행되다, 효력이 발생하다" },
-    { question: "competent", answer: "유능한, 능숙한" },
-    { question: "recreational", answer: "오락의" },
-    { question: "dissipate", answer: "해산하다, 소멸하다" },
-    { question: "agricultural", answer: "농업의" },
-    { question: "convention", answer: "협의회, 관례" },
-    { question: "intricate", answer: "정교한, 복잡한" },
-    { question: "awareness", answer: "의식, 관심" },
-    { question: "negotiator", answer: "협상가, 교섭자" },
-    { question: "supplemental", answer: "추가적인, 보충인" },
-    { question: "outgrow", answer: "너무 커져 맞지 않게 되다, ~보다 더 커지다" },
-    { question: "real estate agent", answer: "부동산 매매 중개인" },
-    { question: "precipitation", answer: "강수량, 강수" },
-    { question: "removal", answer: "제거, 철폐" },
-    { question: "grasp", answer: "꽉 잡다" },
-    { question: "unlikely", answer: "할 것 같지 않은" },
-    { question: "organic", answer: "유기농의" },
-    { question: "recipient", answer: "수령인, 수납자" },
-    { question: "adjust", answer: "조정하다, 적응하다" },
-    { question: "refer", answer: "참고하다, 참조하다" },
-    { question: "address", answer: "연설하다, 다루다, 주소" },
-    { question: "awhile", answer: "잠시, 잠깐" },
-    { question: "perceive", answer: "인지하다, 지각하다" },
-    { question: "clarity", answer: "선명도, 명확성" },
-    { question: "descent", answer: "하강, 내리막" },
-    { question: "knowledgeable", answer: "아는 것이 많은" },
-    { question: "catering", answer: "음식 공급" },
-    { question: "textile", answer: "섬유, 직물" },
-    { question: "track", answer: "추적하다, 길, 자국" },
-    { question: "flexible", answer: "유연한" },
-    { question: "package", answer: "상자, 포장하다" },
-    { question: "attire", answer: "복장, 의복" },
-    { question: "surplus", answer: "과잉" },
-    { question: "consistent with", answer: "~와 일치하는" },
-    { question: "abroad", answer: "해외로" },
-    { question: "yearlong", answer: "1년간의, 1년간 계속되는" },
-    { question: "itinerary", answer: "(여행) 일정표" },
-    { question: "externally", answer: "외적으로, 외부적으로" },
-    { question: "proceed", answer: "진행하다" },
-    { question: "juggle", answer: "잘 조절하다, 요술을 부리다" },
-    { question: "proceeds", answer: "(~에서 나온) 수익" },
-    { question: "bend over", answer: "(몸을) 굽히다" },
-    { question: "occasionally", answer: "가끔" },
-    { question: "straighten", answer: "바로잡다, 똑바르게 하다" },
-    { question: "freight", answer: "화물, 화물운송" },
-    { question: "confident", answer: "확신하는, 자신감이 있는" },
-    { question: "excel", answer: "뛰어나다, 탁월하다" },
-    { question: "retain", answer: "유지하다, 보유하다" },
-    { question: "malfunctioning", answer: "오작동" },
-    { question: "strict", answer: "엄격한" },
-    { question: "global warming", answer: "지구 온난화" }
-  ];
+let quizData = [
+    {
+        question: "customize",
+        options: ["주문제작하다", "대량생산하다", "표준화하다", "일반화하다"],
+        answer: 1
+    },
+    {
+        question: "proper",
+        options: ["올바른, 적절한", "부적절한", "잘못된", "틀린"],
+        answer: 1
+    },
+    {
+        question: "basically",
+        options: ["기본적으로, 근본적으로", "복잡하게", "어렵게", "전문적으로"],
+        answer: 1
+    },
+    {
+        question: "highlight",
+        options: ["강조하다, 가장 좋은 부분", "무시하다", "숨기다", "생략하다"],
+        answer: 1
+    },
+    {
+        question: "approach",
+        options: ["접근법, 처리방법", "회피하다", "포기하다", "거부하다"],
+        answer: 1
+    },
+    {
+        question: "insurance",
+        options: ["보험", "투자", "저축", "대출"],
+        answer: 1
+    },
+    {
+        question: "fill out",
+        options: ["작성하다", "지우다", "삭제하다", "무시하다"],
+        answer: 1
+    },
+    {
+        question: "native",
+        options: ["토종의, 출생지의", "외국의", "인공의", "수입된"],
+        answer: 1
+    },
+    {
+        question: "historical",
+        options: ["역사적인", "현대적인", "미래의", "가상의"],
+        answer: 1
+    },
+    {
+        question: "mutual",
+        options: ["상호간의, 서로의", "일방적인", "독립적인", "개별적인"],
+        answer: 1
+    },
+    {
+        question: "subside",
+        options: ["진정되다, 가라앉다", "격화되다", "증가하다", "확산되다"],
+        answer: 1
+    },
+    {
+        question: "segment",
+        options: ["부분, 분할하다", "전체", "통합하다", "합치다"],
+        answer: 1
+    },
+    {
+        question: "entertaining",
+        options: ["즐거움을 주는", "지루한", "슬픈", "무서운"],
+        answer: 1
+    },
+    {
+        question: "reception",
+        options: ["환영회, 접수처", "송별회", "배웅", "거절"],
+        answer: 1
+    },
+    {
+        question: "departure",
+        options: ["출발", "도착", "정지", "대기"],
+        answer: 1
+    },
+    {
+        question: "deduct",
+        options: ["공제하다, 감하다", "추가하다", "증가시키다", "포함하다"],
+        answer: 1
+    },
+    {
+        question: "demolish",
+        options: ["철거하다", "건설하다", "수리하다", "보수하다"],
+        answer: 1
+    },
+    {
+        question: "recruit",
+        options: ["모집하다, 신입회원", "해고하다", "퇴직하다", "거부하다"],
+        answer: 1
+    },
+    {
+        question: "consult",
+        options: ["참고하다, 상의하다", "무시하다", "거부하다", "혼자하다"],
+        answer: 1
+    },
+    {
+        question: "take effect",
+        options: ["시행되다, 효력이 발생하다", "무효가 되다", "연기되다", "취소되다"],
+        answer: 1
+    },
+    {
+        question: "competent",
+        options: ["유능한, 능숙한", "무능한", "서툰", "부족한"],
+        answer: 1
+    },
+    {
+        question: "recreational",
+        options: ["오락의", "업무의", "공식적인", "진지한"],
+        answer: 1
+    },
+    {
+        question: "dissipate",
+        options: ["해산하다, 소멸하다", "모이다", "증가하다", "강화되다"],
+        answer: 1
+    },
+    {
+        question: "agricultural",
+        options: ["농업의", "공업의", "상업의", "서비스업의"],
+        answer: 1
+    },
+    {
+        question: "convention",
+        options: ["협의회, 관례", "혁신", "변화", "예외"],
+        answer: 1
+    },
+    {
+        question: "intricate",
+        options: ["정교한, 복잡한", "단순한", "쉬운", "기본적인"],
+        answer: 1
+    },
+    {
+        question: "awareness",
+        options: ["의식, 관심", "무관심", "무지", "소홀"],
+        answer: 1
+    },
+    {
+        question: "negotiator",
+        options: ["협상가, 교섭자", "중재자", "관찰자", "방관자"],
+        answer: 1
+    },
+    {
+        question: "supplemental",
+        options: ["추가적인, 보충의", "기본적인", "필수적인", "주요한"],
+        answer: 1
+    },
+    {
+        question: "outgrow",
+        options: ["너무 커져 맞지 않게 되다", "적응하다", "맞추다", "축소되다"],
+        answer: 1
+    },
+    {
+        question: "real estate agent",
+        options: ["부동산 매매 중개인", "보험 설계사", "금융 상담사", "투자 전문가"],
+        answer: 1
+    },
+    {
+        question: "precipitation",
+        options: ["강수량, 강수", "증발", "건조", "가뭄"],
+        answer: 1
+    },
+    {
+        question: "removal",
+        options: ["제거, 철폐", "설치", "추가", "포함"],
+        answer: 1
+    },
+    {
+        question: "grasp",
+        options: ["꽉 잡다", "놓다", "밀다", "던지다"],
+        answer: 1
+    },
+    {
+        question: "unlikely",
+        options: ["할 것 같지 않은", "확실한", "가능성이 높은", "분명한"],
+        answer: 1
+    },
+    {
+        question: "organic",
+        options: ["유기농의", "인공의", "화학적인", "합성의"],
+        answer: 1
+    },
+    {
+        question: "recipient",
+        options: ["수령인, 수납자", "발송인", "배달원", "중개인"],
+        answer: 1
+    },
+    {
+        question: "adjust",
+        options: ["조정하다, 적응하다", "고정하다", "거부하다", "무시하다"],
+        answer: 1
+    },
+    {
+        question: "refer",
+        options: ["참고하다, 참조하다", "무시하다", "거부하다", "생략하다"],
+        answer: 1
+    },
+    {
+        question: "address",
+        options: ["연설하다, 다루다, 주소", "무시하다", "회피하다", "연기하다"],
+        answer: 1
+    },
+    {
+        question: "awhile",
+        options: ["잠시, 잠깐", "영원히", "오랫동안", "계속해서"],
+        answer: 1
+    }
+];
