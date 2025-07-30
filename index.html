@@ -33,51 +33,26 @@
     <div class="content">
       <h1>문제 목록</h1>
       
-      <!-- 목차 시작 -->
-      <div class="table-of-contents">
-        <h2>목차</h2>
-        <ul>
-          <li><a href="#computer-science">컴퓨터학부</a></li>
-          <li><a href="#english">영어</a></li>
-        </ul>
+      <!-- 검색 기능 -->
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="과목명을 입력하세요 (예: 웹프로그래밍, 데이터통신, 운영체제 등)">
+        <div class="search-buttons">
+          <button type="button" class="search-btn" onclick="handleSearch()">검색</button>
+          <button type="button" class="clear-btn" onclick="clearSearch()">전체 목록 보기</button>
+        </div>
       </div>
       
-      <section>
-        <h2 class="section-title">학부 이름</h2>
-
+      <!-- 메뉴 컨테이너 -->
+      <div class="menu-container">
+        <!-- 메뉴가 JavaScript로 동적 생성됩니다 -->
+      </div>
+      
+      <!-- 테스트용 구버전 호환 -->
+      <section style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #eee;">
+        <h2 class="section-title">테스트 & 기타</h2>
         <div class="item-card">
           <h3>테스트용 연습문제</h3>
           <button onclick="location.href='quiz_page/00_test.html'">문제 풀기</button>
-        </div>
-      </section>
-
-      <!-- 컴퓨터학부 섹션 -->
-      <section id="computer-science">
-        <h2 class="section-title">컴퓨터학부</h2>
-        
-        <div class="item-card">
-          <h3>컴퓨터학부 초연결사회의 데이터통신과 네트워킹 연습문제 1장 ~ 6장</h3>
-          <button onclick="location.href='quiz_page/cs_network.html'">문제 풀기</button>
-        </div>
-        
-        <div class="item-card">
-          <h3>2025년 컴퓨터학부 웹프로그래밍 1학기 중간고사 PDF 정리</h3>
-          <button onclick="location.href='quiz_page/cs_webprogramming.html'">문제 풀기</button>
-        </div>
-        
-        <div class="item-card">
-          <h3>5.3 CPU 스케줄링 알고리즘 AI문제</h3>
-          <button onclick="location.href='quiz_page/cpu_scheduling.html'">문제 풀기</button>
-        </div>
-      </section>
-      
-      <!-- 영어 섹션 -->
-      <section id="english">
-        <h2 class="section-title english-section">영어</h2>
-        
-        <div class="item-card">
-          <h3>영단어</h3>
-          <button onclick="location.href='quiz_page/voca_hackers_1.html'">문제 풀기</button>
         </div>
       </section>
     </div>
@@ -89,5 +64,8 @@
       <p class="footer-text">&copy; 2025 세명대학교 게임 개발 동아리 프리릴리즈. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- JavaScript -->
+  <script src="js/menu.js"></script>
 </body>
 </html>
