@@ -22,6 +22,14 @@ const menuData = {
                     }
                 }
             }
+        },
+        "교양": {
+            "과목 이름": {
+                "상세 제목" : {
+                    file: "#",
+                    info: "0000년도 0학년 0학기 중간고사"
+                }
+            }
         }
     },
     "그 외": {
@@ -31,6 +39,12 @@ const menuData = {
                     file: "quiz_page/voca_hackers_1.html",
                     info: "단어장"
                 }
+            }
+        },
+        "일본어": {
+            "히라가나 + 가타카나" : {
+                file: "#",
+                info: "단어장"
             }
         }
     }
