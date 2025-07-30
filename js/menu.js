@@ -3,46 +3,22 @@ const menuData = {
     "세명대학교": {
         "전공": {
             "컴퓨터학부": {
-                "데이터통신과네트워킹": {
-                    "2025": {
-                        "3학년": {
-                            "1학기": {
-                                "중간고사": {
-                                    "연습문제 1장 ~ 6장": {
-                                        file: "quiz_page/cs_network.html",
-                                        type: "랜덤형"
-                                    }
-                                }
-                            }
-                        }
+                "데이터통신과 네트워킹": {
+                    "연습문제 1장 ~ 6장": {
+                        file: "quiz_page/cs_network.html",
+                        info: "2025년도 3학년 1학기 중간고사"
                     }
                 },
                 "웹프로그래밍": {
-                    "2025": {
-                        "3학년": {
-                            "1학기": {
-                                "중간고사": {
-                                    "중간고사 PDF 정리": {
-                                        file: "quiz_page/cs_webprogramming.html",
-                                        type: "고정형"
-                                    }
-                                }
-                            }
-                        }
+                    "중간고사 PDF 정리": {
+                        file: "quiz_page/cs_webprogramming.html",
+                        info: "2025년도 3학년 1학기 중간고사"
                     }
                 },
                 "운영체제": {
-                    "2025": {
-                        "3학년": {
-                            "1학기": {
-                                "기말고사": {
-                                    "CPU 스케줄링 알고리즘 AI문제": {
-                                        file: "quiz_page/cpu_scheduling.html",
-                                        type: "순서 변경형"
-                                    }
-                                }
-                            }
-                        }
+                    "CPU 스케줄링 알고리즘 AI문제": {
+                        file: "quiz_page/cpu_scheduling.html",
+                        info: "2025년도 3학년 1학기 기말고사"
                     }
                 }
             }
@@ -53,7 +29,7 @@ const menuData = {
             "해커스 토익": {
                 "1번 ~ 41번": {
                     file: "quiz_page/voca_hackers_1.html",
-                    type: "암기 카드형"
+                    info: "단어장"
                 }
             }
         }
@@ -69,13 +45,14 @@ function searchQuizzes(keyword) {
             const currentPath = [...path, key];
             
             if (obj[key].file) {
-                // 최종 퀴즈 항목인 경우
-                if (key.toLowerCase().includes(keyword.toLowerCase())) {
+                // 최종 퀴즈 항목인 경우 - 과목명에서 검색
+                const subjectName = currentPath[currentPath.length - 2]; // 과목명
+                if (subjectName && subjectName.toLowerCase().includes(keyword.toLowerCase())) {
                     results.push({
                         name: key,
                         path: currentPath,
                         file: obj[key].file,
-                        type: obj[key].type
+                        info: obj[key].info
                     });
                 }
             } else {
@@ -107,7 +84,7 @@ function renderMenu() {
                 li.innerHTML = `
                     <div class="quiz-item" onclick="location.href='${obj[key].file}'">
                         <span class="quiz-name">${key}</span>
-                        <span class="quiz-type">${obj[key].type}</span>
+                        <span class="quiz-info">${obj[key].info}</span>
                         <button class="quiz-button">문제 풀기</button>
                     </div>
                 `;
@@ -171,7 +148,7 @@ function renderSearchResults(results) {
                 <div class="result-path">${pathString}</div>
                 <div class="quiz-item" onclick="location.href='${result.file}'">
                     <span class="quiz-name">${result.name}</span>
-                    <span class="quiz-type">${result.type}</span>
+                    <span class="quiz-info">${result.info}</span>
                     <button class="quiz-button">문제 풀기</button>
                 </div>
             </div>
