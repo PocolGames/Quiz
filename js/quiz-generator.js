@@ -15,14 +15,16 @@ const previewData = document.getElementById('previewData');
 // 페이지 로드 시 초기화
 document.addEventListener('DOMContentLoaded', function() {
     initializeEventListeners();
+    // 초기 버튼 상태 설정
+    updateButtonStates();
 });
 
 // 이벤트 리스너 초기화
 function initializeEventListeners() {
     // 버튼 이벤트
     parseBtn.addEventListener('click', parseQuizData);
-    downloadBtn.addEventListener('click', downloadJSFile);
-    testBtn.addEventListener('click', openTestQuiz);
+    downloadBtn.addEventListener('click', handleDownloadClick);
+    testBtn.addEventListener('click', handleTestClick);
     
     // 입력 필드 변경 시 미리보기 숨기기
     [fileNameInput, quizInput].forEach(element => {
@@ -30,6 +32,79 @@ function initializeEventListeners() {
             hidePreview();
         });
     });
+}
+
+// 버튼 상태 업데이트
+function updateButtonStates() {
+    if (parsedQuizData) {
+        // 데이터가 파싱된 상태
+        downloadBtn.classList.add('ready');
+        testBtn.classList.add('ready');
+        downloadBtn.classList.remove('not-ready');
+        testBtn.classList.remove('not-ready');
+    } else {
+        // 데이터가 파싱되지 않은 상태
+        downloadBtn.classList.add('not-ready');
+        testBtn.classList.add('not-ready');
+        downloadBtn.classList.remove('ready');
+        testBtn.classList.remove('ready');
+    }
+}
+
+// 다운로드 버튼 클릭 처리
+function handleDownloadClick() {
+    if (!parsedQuizData) {
+        showRequiredStepMessage('다운로드하려면 먼저 "데이터 파싱 및 미리보기" 버튼을 눌러 데이터를 파싱해주세요.');
+        return;
+    }
+    downloadJSFile();
+}
+
+// 테스트 버튼 클릭 처리
+function handleTestClick() {
+    if (!parsedQuizData) {
+        showRequiredStepMessage('퀴즈를 테스트하려면 먼저 "데이터 파싱 및 미리보기" 버튼을 눌러 데이터를 파싱해주세요.');
+        return;
+    }
+    openTestQuiz();
+}
+
+// 필수 단계 안내 메시지 표시
+function showRequiredStepMessage(message) {
+    // 기존 메시지가 있다면 제거
+    const existingMessage = document.querySelector('.step-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // 새 메시지 생성
+    const messageElement = document.createElement('div');
+    messageElement.className = 'step-message';
+    messageElement.innerHTML = `
+        <div class="step-message-content">
+            <div class="step-message-icon">ⓘ</div>
+            <div class="step-message-text">${message}</div>
+            <button class="step-message-close" onclick="this.parentElement.parentElement.remove()">×</button>
+        </div>
+    `;
+    
+    // 액션 섹션 위에 삽입
+    const actionSection = document.querySelector('.action-section');
+    actionSection.parentNode.insertBefore(messageElement, actionSection);
+    
+    // 메시지로 스크롤
+    messageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // 파싱 버튼 강조
+    parseBtn.classList.add('highlighted');
+    
+    // 5초 후 자동 제거 및 강조 해제
+    setTimeout(() => {
+        if (messageElement.parentNode) {
+            messageElement.remove();
+        }
+        parseBtn.classList.remove('highlighted');
+    }, 5000);
 }
 
 // 퀴즈 데이터 파싱
@@ -51,8 +126,15 @@ function parseQuizData() {
     }
     
     try {
+        // 기존 단계 메시지 제거
+        const existingMessage = document.querySelector('.step-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
         // 로딩 상태
         parseBtn.classList.add('loading');
+        parseBtn.classList.remove('highlighted');
         
         // 데이터 파싱
         parsedQuizData = parseInputData(inputText);
@@ -60,9 +142,11 @@ function parseQuizData() {
         // 미리보기 표시
         showPreview();
         
-        // 버튼 활성화
-        downloadBtn.disabled = false;
-        testBtn.disabled = false;
+        // 버튼 상태 업데이트
+        updateButtonStates();
+        
+        // 성공 메시지 표시
+        showSuccessMessage(`데이터 파싱이 완료되었습니다! 총 ${parsedQuizData.length}개의 문제가 생성되었습니다.`);
         
     } catch (error) {
         alert('데이터 파싱 중 오류가 발생했습니다:\n' + error.message);
@@ -70,6 +154,28 @@ function parseQuizData() {
     } finally {
         parseBtn.classList.remove('loading');
     }
+}
+
+// 성공 메시지 표시
+function showSuccessMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.className = 'success-message';
+    messageElement.innerHTML = `
+        <div class="success-message-content">
+            <div class="success-message-icon">✓</div>
+            <div class="success-message-text">${message}</div>
+        </div>
+    `;
+    
+    const actionSection = document.querySelector('.action-section');
+    actionSection.parentNode.insertBefore(messageElement, actionSection);
+    
+    // 3초 후 자동 제거
+    setTimeout(() => {
+        if (messageElement.parentNode) {
+            messageElement.remove();
+        }
+    }, 3000);
 }
 
 // 입력 데이터 파싱 함수
@@ -186,9 +292,14 @@ function showPreview() {
 // 미리보기 숨기기
 function hidePreview() {
     previewSection.style.display = 'none';
-    downloadBtn.disabled = true;
-    testBtn.disabled = true;
     parsedQuizData = null;
+    
+    // 버튼 상태 업데이트
+    updateButtonStates();
+    
+    // 기존 메시지들 제거
+    const existingMessages = document.querySelectorAll('.step-message, .success-message');
+    existingMessages.forEach(msg => msg.remove());
 }
 
 // JS 파일 다운로드
