@@ -4,19 +4,19 @@ const menuData = {
         "전공": {
             "컴퓨터학부": {
                 "데이터통신과 네트워킹": {
-                    "연습문제 1장 ~ 6장": {
+                    "연습문제 1장 ~ 6장 (테스트용)": {
                         file: "quiz_page/cs_network.html",
                         info: "2025년도 3학년 1학기 중간고사"
                     }
                 },
                 "웹프로그래밍": {
-                    "중간고사 PDF 정리": {
+                    "중간고사 PDF 정리 (테스트용)": {
                         file: "quiz_page/cs_webprogramming.html",
                         info: "2025년도 3학년 1학기 중간고사"
                     }
                 },
                 "운영체제": {
-                    "CPU 스케줄링 알고리즘 AI문제": {
+                    "CPU 스케줄링 알고리즘 AI문제 (테스트용)": {
                         file: "quiz_page/cpu_scheduling.html",
                         info: "2025년도 3학년 1학기 기말고사"
                     }
@@ -27,7 +27,7 @@ const menuData = {
     "그 외": {
         "영어": {
             "해커스 토익": {
-                "1번 ~ 41번": {
+                "1번 ~ 41번 (테스트용)": {
                     file: "quiz_page/voca_hackers_1.html",
                     info: "단어장"
                 }
