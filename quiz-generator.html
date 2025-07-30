@@ -43,31 +43,14 @@
           <label for="fileName">파일명 (확장자 제외):</label>
           <input type="text" id="fileName" placeholder="예: my-quiz-data" required>
         </div>
-        <div class="form-group">
-          <label for="quizType">퀴즈 유형:</label>
-          <select id="quizType" required>
-            <option value="">퀴즈 유형을 선택하세요</option>
-            <option value="fixed">고정형 (객관식 순서 고정)</option>
-            <option value="random">랜덤형 (오답이 다른 문제의 정답으로 채워짐)</option>
-            <option value="shuffled">순서 변경형 (객관식 순서 매번 섞임)</option>
-            <option value="flashcard">암기 카드형 (정답 확인 방식)</option>
-          </select>
-        </div>
       </section>
 
       <!-- 입력 형식 안내 -->
       <section class="format-guide">
         <h2>입력 형식 안내</h2>
-        <div class="format-tabs">
-          <button class="format-tab active" data-type="fixed">고정형</button>
-          <button class="format-tab" data-type="random">랜덤형</button>
-          <button class="format-tab" data-type="shuffled">순서 변경형</button>
-          <button class="format-tab" data-type="flashcard">암기 카드형</button>
-        </div>
-        
         <div class="format-content">
-          <div class="format-example active" data-type="fixed">
-            <h3>고정형 입력 형식</h3>
+          <div class="format-example">
+            <h3>퀴즈 데이터 입력 형식</h3>
             <p>각 문제는 빈 줄로 구분하며, 첫 번째 줄은 문제, 나머지는 선택지입니다. 정답은 *로 표시하세요.</p>
             <pre class="format-code">문제 1: JavaScript에서 변수를 선언하는 키워드는?
 *let
@@ -79,49 +62,16 @@ function
 div
 span
 *h1
-p</pre>
-          </div>
-          
-          <div class="format-example" data-type="random">
-            <h3>랜덤형 입력 형식</h3>
-            <p>정답만 입력하면 됩니다. 오답은 다른 문제의 정답으로 자동 생성됩니다.</p>
-            <pre class="format-code">문제 1: JavaScript에서 변수를 선언하는 키워드는?
-*let
-
-문제 2: HTML의 기본 구조에서 제목을 나타내는 태그는?
-*h1
+p
 
 문제 3: CSS에서 글자 색상을 지정하는 속성은?
-*color</pre>
-          </div>
-          
-          <div class="format-example" data-type="shuffled">
-            <h3>순서 변경형 입력 형식</h3>
-            <p>고정형과 동일하게 입력하되, 매번 선택지 순서가 섞입니다.</p>
-            <pre class="format-code">문제 1: JavaScript에서 변수를 선언하는 키워드는?
-*let
-const
-var
-function
-
-문제 2: HTML의 기본 구조에서 제목을 나타내는 태그는?
-div
-span
-*h1
-p</pre>
-          </div>
-          
-          <div class="format-example" data-type="flashcard">
-            <h3>암기 카드형 입력 형식</h3>
-            <p>문제와 정답만 입력하면 됩니다. 선택지는 필요하지 않습니다.</p>
-            <pre class="format-code">문제 1: JavaScript에서 변수를 선언하는 키워드 3가지는?
-*let, const, var
-
-문제 2: HTML의 기본 구조에서 제목을 나타내는 태그는?
-*h1, h2, h3, h4, h5, h6
-
-문제 3: CSS에서 글자 색상을 지정하는 속성은?
-*color</pre>
+*color
+font-size
+margin
+padding</pre>
+            <div class="format-note">
+              <p><strong>참고:</strong> 생성된 퀴즈 데이터는 모든 퀴즈 유형(고정형, 랜덤형, 순서 변경형, 암기 카드형)에서 사용할 수 있습니다.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -149,7 +99,6 @@ p</pre>
         <h2>데이터 미리보기</h2>
         <div class="preview-stats">
           <span class="stat">총 문제 수: <strong id="questionCount">0</strong></span>
-          <span class="stat">퀴즈 유형: <strong id="previewType">-</strong></span>
         </div>
         <div class="preview-content">
           <pre id="previewData"></pre>

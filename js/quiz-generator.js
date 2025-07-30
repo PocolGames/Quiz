@@ -1,10 +1,8 @@
 // 퀴즈 생성기 JavaScript
 
 let parsedQuizData = null;
-let currentQuizType = null;
 
 // DOM 요소들
-const quizTypeSelect = document.getElementById('quizType');
 const fileNameInput = document.getElementById('fileName');
 const quizInput = document.getElementById('quizInput');
 const parseBtn = document.getElementById('parseBtn');
@@ -12,12 +10,7 @@ const downloadBtn = document.getElementById('downloadBtn');
 const testBtn = document.getElementById('testBtn');
 const previewSection = document.querySelector('.preview-section');
 const questionCount = document.getElementById('questionCount');
-const previewType = document.getElementById('previewType');
 const previewData = document.getElementById('previewData');
-
-// 형식 탭 관련
-const formatTabs = document.querySelectorAll('.format-tab');
-const formatExamples = document.querySelectorAll('.format-example');
 
 // 페이지 로드 시 초기화
 document.addEventListener('DOMContentLoaded', function() {
@@ -26,67 +19,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 이벤트 리스너 초기화
 function initializeEventListeners() {
-    // 형식 탭 클릭
-    formatTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            const type = this.getAttribute('data-type');
-            switchFormatTab(type);
-        });
-    });
-    
-    // 퀴즈 타입 선택 시 형식 탭도 변경
-    quizTypeSelect.addEventListener('change', function() {
-        const selectedType = this.value;
-        if (selectedType) {
-            switchFormatTab(selectedType);
-        }
-    });
-    
     // 버튼 이벤트
     parseBtn.addEventListener('click', parseQuizData);
     downloadBtn.addEventListener('click', downloadJSFile);
     testBtn.addEventListener('click', openTestQuiz);
     
     // 입력 필드 변경 시 미리보기 숨기기
-    [quizTypeSelect, fileNameInput, quizInput].forEach(element => {
+    [fileNameInput, quizInput].forEach(element => {
         element.addEventListener('input', function() {
             hidePreview();
         });
     });
 }
 
-// 형식 탭 전환
-function switchFormatTab(type) {
-    formatTabs.forEach(tab => {
-        tab.classList.toggle('active', tab.getAttribute('data-type') === type);
-    });
-    
-    formatExamples.forEach(example => {
-        example.classList.toggle('active', example.getAttribute('data-type') === type);
-    });
-    
-    // 퀴즈 타입 선택도 동기화
-    if (quizTypeSelect.value !== type) {
-        quizTypeSelect.value = type;
-    }
-}
-
 // 퀴즈 데이터 파싱
 function parseQuizData() {
     const fileName = fileNameInput.value.trim();
-    const quizType = quizTypeSelect.value;
     const inputText = quizInput.value.trim();
     
     // 유효성 검사
     if (!fileName) {
         alert('파일명을 입력해주세요.');
         fileNameInput.focus();
-        return;
-    }
-    
-    if (!quizType) {
-        alert('퀴즈 유형을 선택해주세요.');
-        quizTypeSelect.focus();
         return;
     }
     
@@ -101,8 +55,7 @@ function parseQuizData() {
         parseBtn.classList.add('loading');
         
         // 데이터 파싱
-        parsedQuizData = parseInputData(inputText, quizType);
-        currentQuizType = quizType;
+        parsedQuizData = parseInputData(inputText);
         
         // 미리보기 표시
         showPreview();
@@ -120,7 +73,7 @@ function parseQuizData() {
 }
 
 // 입력 데이터 파싱 함수
-function parseInputData(inputText, quizType) {
+function parseInputData(inputText) {
     // 실제 줄바꿈으로 분할 (Windows와 Unix 스타일 모두 처리)
     const questions = inputText.split(/\r?\n\s*\r?\n/).filter(q => q.trim());
     const quizData = [];
@@ -137,32 +90,14 @@ function parseInputData(inputText, quizType) {
         
         const questionText = lines[0];
         
-        if (quizType === 'flashcard') {
-            // 암기 카드형: 문제와 정답만
-            const answerLine = lines.find(line => line.startsWith('*'));
-            if (!answerLine) {
-                throw new Error(`${index + 1}번 문제에 정답(*로 시작하는 줄)이 없습니다.`);
-            }
-            
-            quizData.push({
-                question: questionText,
-                answer: answerLine.substring(1).trim()
-            });
-            
-        } else if (quizType === 'random') {
-            // 랜덤형: 정답만 입력, 오답은 나중에 생성
-            const answerLine = lines.find(line => line.startsWith('*'));
-            if (!answerLine) {
-                throw new Error(`${index + 1}번 문제에 정답(*로 시작하는 줄)이 없습니다.`);
-            }
-            
-            quizData.push({
-                question: questionText,
-                correctAnswer: answerLine.substring(1).trim()
-            });
-            
-        } else {
-            // 고정형, 순서 변경형: 문제 + 4개 선택지
+        // 정답 찾기
+        const answerLine = lines.find(line => line.startsWith('*'));
+        if (!answerLine) {
+            throw new Error(`${index + 1}번 문제에 정답(*로 시작하는 줄)이 없습니다.`);
+        }
+        
+        // 선택지가 있는 경우 (객관식)
+        if (lines.length > 2) {
             const options = [];
             let correctAnswerIndex = -1;
             
@@ -190,6 +125,12 @@ function parseInputData(inputText, quizType) {
                 options: options,
                 answer: correctAnswerIndex
             });
+        } else {
+            // 선택지가 없는 경우 (암기 카드형 또는 단답형)
+            quizData.push({
+                question: questionText,
+                answer: answerLine.substring(1).trim()
+            });
         }
     });
     
@@ -197,57 +138,12 @@ function parseInputData(inputText, quizType) {
         throw new Error('파싱된 문제가 없습니다. 입력 형식을 확인해주세요.');
     }
     
-    // 랜덤형의 경우 오답 생성
-    if (quizType === 'random') {
-        return generateRandomQuizData(quizData);
-    }
-    
     return quizData;
-}
-
-// 랜덤형 퀴즈 데이터 생성 (오답을 다른 문제의 정답으로 채움)
-function generateRandomQuizData(rawData) {
-    const allAnswers = rawData.map(item => item.correctAnswer);
-    
-    return rawData.map((item, index) => {
-        const options = [item.correctAnswer];
-        const otherAnswers = allAnswers.filter((answer, i) => i !== index);
-        
-        // 다른 답들 중에서 랜덤하게 선택 (중복 제거)
-        const shuffledOthers = [...otherAnswers].sort(() => Math.random() - 0.5);
-        const selectedOthers = shuffledOthers.slice(0, Math.min(3, shuffledOthers.length));
-        
-        // 부족한 선택지는 기본값으로 채움
-        while (selectedOthers.length < 3) {
-            selectedOthers.push(`선택지 ${selectedOthers.length + 1}`);
-        }
-        
-        options.push(...selectedOthers);
-        
-        // 선택지 섞기
-        const correctAnswer = options[0];
-        const shuffledOptions = [...options].sort(() => Math.random() - 0.5);
-        const correctIndex = shuffledOptions.indexOf(correctAnswer) + 1;
-        
-        return {
-            question: item.question,
-            options: shuffledOptions,
-            answer: correctIndex
-        };
-    });
 }
 
 // 미리보기 표시
 function showPreview() {
     questionCount.textContent = parsedQuizData.length;
-    
-    const typeNames = {
-        'fixed': '고정형',
-        'random': '랜덤형', 
-        'shuffled': '순서 변경형',
-        'flashcard': '암기 카드형'
-    };
-    previewType.textContent = typeNames[currentQuizType] || currentQuizType;
     
     // 데이터 미리보기 (처음 3개 문제만)
     const previewItems = parsedQuizData.slice(0, 3);
@@ -258,15 +154,17 @@ function showPreview() {
         previewText += `{\n`;
         previewText += `    question: "${item.question}",\n`;
         
-        if (currentQuizType === 'flashcard') {
-            previewText += `    answer: "${item.answer}"\n`;
-        } else {
+        if (item.options) {
+            // 객관식 문제
             previewText += `    options: [\n`;
             item.options.forEach(option => {
                 previewText += `        "${option}",\n`;
             });
             previewText += `    ],\n`;
             previewText += `    answer: ${item.answer}\n`;
+        } else {
+            // 단답형/암기 카드형 문제
+            previewText += `    answer: "${item.answer}"\n`;
         }
         
         previewText += `}`;
@@ -291,7 +189,6 @@ function hidePreview() {
     downloadBtn.disabled = true;
     testBtn.disabled = true;
     parsedQuizData = null;
-    currentQuizType = null;
 }
 
 // JS 파일 다운로드
@@ -334,7 +231,6 @@ function openTestQuiz() {
     
     // 임시 퀴즈 데이터를 세션 스토리지에 저장
     const tempQuizData = {
-        type: currentQuizType,
         data: parsedQuizData,
         title: fileNameInput.value.trim() || '임시 퀴즈'
     };
