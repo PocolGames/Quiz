@@ -38,6 +38,5 @@ let quizData = [
             "4번 문제 정답"
         ],
         answer: 4
-    },
-
+    }
 ];

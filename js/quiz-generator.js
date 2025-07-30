@@ -218,8 +218,43 @@ function downloadJSFile() {
 
 // JS 파일 내용 생성
 function generateJSFileContent(data) {
-    const jsonString = JSON.stringify(data, null, 4);
-    return `let quizData = ${jsonString};`;
+    let jsContent = 'let quizData = [\n';
+    
+    data.forEach((item, index) => {
+        jsContent += '    {\n';
+        jsContent += `        question: "${item.question}",\n`;
+        
+        if (item.options) {
+            // 객관식 문제
+            jsContent += '        options: [\n';
+            item.options.forEach((option, optionIndex) => {
+                jsContent += `            "${option}"`;
+                // 마지막 선택지가 아니면 쉼표 추가
+                if (optionIndex < item.options.length - 1) {
+                    jsContent += ',';
+                }
+                jsContent += '\n';
+            });
+            jsContent += '        ],\n';
+            jsContent += `        answer: ${item.answer}\n`;
+        } else {
+            // 단답형/암기 카드형 문제
+            jsContent += `        answer: "${item.answer}"\n`;
+        }
+        
+        jsContent += '    }';
+        
+        // 마지막 문제가 아니면 쉼표 추가
+        if (index < data.length - 1) {
+            jsContent += ',';
+        }
+        
+        jsContent += '\n';
+    });
+    
+    jsContent += '];';
+    
+    return jsContent;
 }
 
 // 임시 퀴즈 테스트 열기
