@@ -49,21 +49,13 @@ h1 {
   border-bottom: 1px solid #eee;
 }
 
-/* 검색 컨테이너 */
-.search-container {
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
-}
-
 .search-input {
   width: 100%;
   padding: 12px 16px;
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 16px;
+  margin-bottom: 30px;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -368,10 +360,6 @@ button:hover {
     margin-bottom: 20px;
   }
   
-  .search-container {
-    padding: 15px;
-  }
-  
   .search-input {
     font-size: 16px; /* iOS 줌 방지 */
   }
@@ -413,10 +401,6 @@ button:hover {
     font-size: 22px;
     padding-bottom: 10px;
     margin-bottom: 15px;
-  }
-  
-  .search-container {
-    padding: 12px;
   }
   
   .folder-item, .quiz-item {
