@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>임시 퀴즈 테스트 - 문제 은행 웹사이트</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <!-- 네비게이션 -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">문제 은행</a>
+      <div class="nav-center">
+        <a href="index.html">홈</a>
+        <a href="quiz-generator.html">퀴즈 생성기</a>
+        <a href="update.html">업데이트 내역</a>
+        <a href="inquires.html">문의</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 메인 콘텐츠 -->
+  <div class="container">
+    <div class="content">
+      <div class="quiz-header">
+        <h1 id="quizTitle">임시 퀴즈 테스트</h1>
+        <div class="quiz-info">
+          <span class="quiz-type" id="quizTypeInfo">-</span>
+          <span class="quiz-progress">
+            <span id="currentQuestion">1</span> / <span id="totalQuestions">0</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- 퀴즈 영역 -->
+      <div class="quiz-container">
+        <div class="question-section">
+          <div class="question-number">문제 <span id="questionNumber">1</span></div>
+          <div class="question-text" id="questionText">문제를 불러오는 중...</div>
+        </div>
+
+        <!-- 객관식 답안 (고정형, 랜덤형, 순서변경형) -->
+        <div class="options-section" id="optionsSection">
+          <div class="option" data-option="1">
+            <div class="option-number">1</div>
+            <div class="option-text" id="option1"></div>
+          </div>
+          <div class="option" data-option="2">
+            <div class="option-number">2</div>
+            <div class="option-text" id="option2"></div>
+          </div>
+          <div class="option" data-option="3">
+            <div class="option-number">3</div>
+            <div class="option-text" id="option3"></div>
+          </div>
+          <div class="option" data-option="4">
+            <div class="option-number">4</div>
+            <div class="option-text" id="option4"></div>
+          </div>
+        </div>
+
+        <!-- 암기카드 답안 -->
+        <div class="flashcard-section" id="flashcardSection" style="display: none;">
+          <div class="flashcard-answer" id="flashcardAnswer" style="display: none;">
+            <div class="answer-label">정답</div>
+            <div class="answer-text" id="answerText"></div>
+          </div>
+          <div class="flashcard-buttons">
+            <button class="btn btn-secondary" id="showAnswerBtn">정답 보기</button>
+            <div class="flashcard-result-buttons" id="flashcardResultButtons" style="display: none;">
+              <button class="btn btn-success" id="correctBtn">맞음</button>
+              <button class="btn btn-danger" id="wrongBtn">틀림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 제출/다음 버튼 -->
+        <div class="submit-section">
+          <button class="btn btn-primary" id="submitBtn">정답 확인</button>
+          <button class="btn btn-primary" id="nextBtn" style="display: none;">다음 문제</button>
+        </div>
+
+        <!-- 결과 표시 -->
+        <div class="result-section" id="resultSection" style="display: none;">
+          <div class="result-content">
+            <div class="result-icon" id="resultIcon"></div>
+            <div class="result-text" id="resultText"></div>
+            <div class="correct-answer" id="correctAnswerText" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 최종 결과 -->
+      <div class="final-result" id="finalResult" style="display: none;">
+        <h2>퀴즈 완료!</h2>
+        <div class="score-display">
+          <div class="score-circle">
+            <div class="score-text">
+              <span id="finalScore">0</span>
+              <span class="score-total">/ <span id="finalTotal">0</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="score-percentage" id="scorePercentage">0%</div>
+        <div class="final-buttons">
+          <button class="btn btn-secondary" onclick="location.reload()">다시 풀기</button>
+          <button class="btn btn-primary" onclick="window.close()">창 닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="footer-container">
+      <p class="footer-text">&copy; 2025 세명대학교 게임 개발 동아리 프리릴리즈. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/temp-quiz.js"></script>
+</body>
+</html>

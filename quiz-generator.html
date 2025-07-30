@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>퀴즈 데이터 생성기 - 문제 은행 웹사이트</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/quiz-generator.css">
+</head>
+<body>
+  <!-- 네비게이션 -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">문제 은행</a>
+      <div class="nav-center">
+        <a href="index.html">홈</a>
+        <a href="quiz-generator.html" class="active">퀴즈 생성기</a>
+        <a href="update.html">업데이트 내역</a>
+        <a href="inquires.html">문의</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 메인 콘텐츠 -->
+  <div class="container">
+    <div class="content">
+      <h1>퀴즈 데이터 생성기</h1>
+      <p class="subtitle">텍스트 형식으로 문제를 입력하여 퀴즈 데이터 파일을 생성하고 다운로드하세요.</p>
+      
+      <!-- 파일 정보 섹션 -->
+      <section class="file-info-section">
+        <h2>파일 정보</h2>
+        <div class="form-group">
+          <label for="fileName">파일명 (확장자 제외):</label>
+          <input type="text" id="fileName" placeholder="예: my-quiz-data" required>
+        </div>
+        <div class="form-group">
+          <label for="quizType">퀴즈 유형:</label>
+          <select id="quizType" required>
+            <option value="">퀴즈 유형을 선택하세요</option>
+            <option value="fixed">고정형 (객관식 순서 고정)</option>
+            <option value="random">랜덤형 (오답이 다른 문제의 정답으로 채워짐)</option>
+            <option value="shuffled">순서 변경형 (객관식 순서 매번 섞임)</option>
+            <option value="flashcard">암기 카드형 (정답 확인 방식)</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- 입력 형식 안내 -->
+      <section class="format-guide">
+        <h2>입력 형식 안내</h2>
+        <div class="format-tabs">
+          <button class="format-tab active" data-type="fixed">고정형</button>
+          <button class="format-tab" data-type="random">랜덤형</button>
+          <button class="format-tab" data-type="shuffled">순서 변경형</button>
+          <button class="format-tab" data-type="flashcard">암기 카드형</button>
+        </div>
+        
+        <div class="format-content">
+          <div class="format-example active" data-type="fixed">
+            <h3>고정형 입력 형식</h3>
+            <p>각 문제는 빈 줄로 구분하며, 첫 번째 줄은 문제, 나머지는 선택지입니다. 정답은 *로 표시하세요.</p>
+            <pre class="format-code">문제 1: JavaScript에서 변수를 선언하는 키워드는?
+*let
+const
+var
+function
+
+문제 2: HTML의 기본 구조에서 제목을 나타내는 태그는?
+div
+span
+*h1
+p</pre>
+          </div>
+          
+          <div class="format-example" data-type="random">
+            <h3>랜덤형 입력 형식</h3>
+            <p>정답만 입력하면 됩니다. 오답은 다른 문제의 정답으로 자동 생성됩니다.</p>
+            <pre class="format-code">문제 1: JavaScript에서 변수를 선언하는 키워드는?
+*let
+
+문제 2: HTML의 기본 구조에서 제목을 나타내는 태그는?
+*h1
+
+문제 3: CSS에서 글자 색상을 지정하는 속성은?
+*color</pre>
+          </div>
+          
+          <div class="format-example" data-type="shuffled">
+            <h3>순서 변경형 입력 형식</h3>
+            <p>고정형과 동일하게 입력하되, 매번 선택지 순서가 섞입니다.</p>
+            <pre class="format-code">문제 1: JavaScript에서 변수를 선언하는 키워드는?
+*let
+const
+var
+function
+
+문제 2: HTML의 기본 구조에서 제목을 나타내는 태그는?
+div
+span
+*h1
+p</pre>
+          </div>
+          
+          <div class="format-example" data-type="flashcard">
+            <h3>암기 카드형 입력 형식</h3>
+            <p>문제와 정답만 입력하면 됩니다. 선택지는 필요하지 않습니다.</p>
+            <pre class="format-code">문제 1: JavaScript에서 변수를 선언하는 키워드 3가지는?
+*let, const, var
+
+문제 2: HTML의 기본 구조에서 제목을 나타내는 태그는?
+*h1, h2, h3, h4, h5, h6
+
+문제 3: CSS에서 글자 색상을 지정하는 속성은?
+*color</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- 데이터 입력 섹션 -->
+      <section class="input-section">
+        <h2>퀴즈 데이터 입력</h2>
+        <div class="form-group">
+          <label for="quizInput">퀴즈 데이터를 입력하세요:</label>
+          <textarea id="quizInput" placeholder="위의 형식 안내에 따라 퀴즈 데이터를 입력하세요..." rows="20"></textarea>
+        </div>
+      </section>
+
+      <!-- 액션 버튼들 -->
+      <section class="action-section">
+        <div class="button-group">
+          <button id="parseBtn" class="btn btn-secondary">데이터 파싱 및 미리보기</button>
+          <button id="downloadBtn" class="btn btn-primary" disabled>JS 파일 다운로드</button>
+          <button id="testBtn" class="btn btn-success" disabled>임시 퀴즈 테스트</button>
+        </div>
+      </section>
+
+      <!-- 미리보기 섹션 -->
+      <section class="preview-section" style="display: none;">
+        <h2>데이터 미리보기</h2>
+        <div class="preview-stats">
+          <span class="stat">총 문제 수: <strong id="questionCount">0</strong></span>
+          <span class="stat">퀴즈 유형: <strong id="previewType">-</strong></span>
+        </div>
+        <div class="preview-content">
+          <pre id="previewData"></pre>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="footer-container">
+      <p class="footer-text">&copy; 2025 세명대학교 게임 개발 동아리 프리릴리즈. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/quiz-generator.js"></script>
+</body>
+</html>
