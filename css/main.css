@@ -134,18 +134,7 @@ hr {
   margin-top: 40px;
 }
 
-/* 카드 유형 레이블 */
-.card-type {
-  display: inline-block;
-  background-color: #f0f2f5;
-  color: #4a6da7;
-  font-size: 14px;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin-bottom: 12px;
-  font-weight: 500;
-  border: 1px solid #e0e5ec;
-}
+
 
 /* 버튼 스타일 */
 button {
@@ -279,10 +268,7 @@ button:hover {
     margin-bottom: 12px;
   }
   
-  .card-type {
-    font-size: 12px;
-    padding: 3px 8px;
-  }
+
   
   .item-card {
     padding: 12px;
