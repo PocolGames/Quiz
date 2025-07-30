@@ -73,38 +73,7 @@ h1 {
   box-shadow: 0 0 0 3px rgba(74, 109, 167, 0.1);
 }
 
-.search-buttons {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-}
 
-.search-btn, .clear-btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.search-btn {
-  background-color: #4a6da7;
-  color: white;
-}
-
-.search-btn:hover {
-  background-color: #385990;
-}
-
-.clear-btn {
-  background-color: #6c757d;
-  color: white;
-}
-
-.clear-btn:hover {
-  background-color: #545b62;
-}
 
 /* 메뉴 컨테이너 */
 .menu-container {
@@ -407,12 +376,7 @@ button:hover {
     font-size: 16px; /* iOS 줌 방지 */
   }
   
-  .search-buttons {
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  .search-btn, .clear-btn, .quiz-button {
+  .quiz-button {
     width: 100%;
     margin: 0;
   }

@@ -172,13 +172,6 @@ function handleSearch() {
     }
 }
 
-// 검색 초기화
-function clearSearch() {
-    const searchInput = document.querySelector('.search-input');
-    searchInput.value = '';
-    renderMenu();
-}
-
 // 페이지 로드 시 초기화
 document.addEventListener('DOMContentLoaded', function() {
     renderMenu();
