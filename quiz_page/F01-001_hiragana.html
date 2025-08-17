@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>히라가나</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/quiz.css">
+  <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+  <!-- 네비게이션 -->
+  <nav>
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">문제 은행</a>
+      <div class="nav-center">
+        <a href="../index.html">홈</a>
+        <a href="../update.html">업데이트 내역</a>
+        <a href="../inquires.html">문의</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 모드 선택 화면 -->
+  <div class="mode-selection" id="mode-selection">
+    <div class="quiz-container">
+      <h2>퀴즈 방식을 선택해주세요</h2>
+      <div class="mode-description">
+        <p><strong>고정형:</strong> 선택지 순서가 고정되어 있습니다.</p>
+        <p><strong>랜덤형:</strong> 정답을 제외한 오답이 다른 문제들의 정답으로 채워집니다.</p>
+        <p><strong>순서변경형:</strong> 선택지 순서가 매번 섞입니다.</p>
+        <p><strong>암기카드형:</strong> 문제를 보고 정답을 맞히는 방식입니다.</p>
+      </div>
+      <div class="mode-buttons">
+        <button class="quiz-button mode-btn" data-mode="fixed">고정형</button>
+        <button class="quiz-button mode-btn" data-mode="random">랜덤형</button>
+        <button class="quiz-button mode-btn" data-mode="shuffled">순서변경형</button>
+        <button class="quiz-button mode-btn" data-mode="flashcard">암기카드형</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 통합 퀴즈 컨테이너 (객관식 모드용) -->
+  <div class="quiz-container" id="quiz-container" style="display:none;">
+    <h2 class="quiz-question" id="question">문제가 여기에 표시됩니다</h2>
+    <ul class="quiz-options" id="options">
+      <!-- 선택지가 여기에 들어감 -->
+    </ul>
+    <div class="quiz-result" id="result"></div>
+    <div style="text-align: center;">
+      <button class="quiz-button" id="next-button" style="display:none;">다음 문제</button>
+      <button class="quiz-button" id="restart-button" style="display:none;">다시 시작</button>
+    </div>
+  </div>
+
+  <!-- 플래시카드 컨테이너 -->
+  <div class="flashcard-container" id="flashcard-container" style="display:none;">
+    <div class="card-counter" id="card-counter"></div>
+    <hr>
+    <h2 class="card-front" id="flashcard-question">문제가 여기에 표시됩니다</h2>
+    <div class="card-back" id="flashcard-answer" style="display:none;"></div>
+
+    <div style="text-align: center;">
+      <button class="quiz-button" id="flashcard-prev-button" style="display:none;">이전 문제</button>
+      <button class="quiz-button" id="flashcard-next-button" style="display:none;">다음 문제</button>
+      <button class="quiz-button" id="show-answer-button">정답 보기</button>
+      <button class="quiz-button" id="flashcard-restart-button" style="display:none;">다시 시작</button>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="footer-container">
+      <p class="footer-text">&copy; 2025 세명대학교 게임 개발 동아리 프리릴리즈. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../data/F01-001_hiragana.js"></script>
+  <script src="../system/quiz-engine.js"></script>
+  <script src="../system/fixed-quiz.js"></script>
+  <script src="../system/random-quiz.js"></script>
+  <script src="../system/shuffled-quiz.js"></script>
+  <script src="../system/flashcard-main.js"></script>
+</body>
+</html>

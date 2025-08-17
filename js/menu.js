@@ -43,15 +43,15 @@ const menuData = {
         },
         "일본어": {
             "히라가나": {
-                file: "#",
+                file: "quiz_page/F01-001_hiragana.html",
                 info: "단어장"
             },
             "가타카나" : {
-                file: "#",
+                file: "quiz_page/F01-002_katakana.html",
                 info: "단어장"
             },
             "히라가나 + 가타카나" : {
-                file: "#",
+                file: "quiz_page/F01-003_hiragana+katakana.html",
                 info: "단어장"
             }
         }
