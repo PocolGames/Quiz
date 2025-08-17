@@ -67,6 +67,7 @@ function loadShuffledQuestion() {
     const optionsEl = document.getElementById('options');
     const resultEl = document.getElementById('result');
     const nextBtn = document.getElementById('next-button');
+    const counterEl = document.getElementById('quiz-counter');
     
     if (!questionEl || !optionsEl) {
         console.error('Required elements not found:', {
@@ -82,6 +83,7 @@ function loadShuffledQuestion() {
     optionsEl.innerHTML = '';
     if (resultEl) resultEl.textContent = '';
     if (nextBtn) nextBtn.style.display = 'none';
+    if (counterEl) counterEl.textContent = `${shuffledCurrentQuestion + 1} / ${currentQuizData.length}`;
 
     // 선택지를 인덱스와 함께 배열로 만들기
     const optionsWithIndex = q.options.map((option, index) => ({

@@ -67,6 +67,7 @@ function loadFixedQuestion() {
     const optionsEl = document.getElementById('options');
     const resultEl = document.getElementById('result');
     const nextBtn = document.getElementById('next-button');
+    const counterEl = document.getElementById('quiz-counter');
     
     if (!questionEl || !optionsEl) {
         console.error('Required elements not found:', {
@@ -80,6 +81,7 @@ function loadFixedQuestion() {
     optionsEl.innerHTML = '';
     if (resultEl) resultEl.textContent = '';
     if (nextBtn) nextBtn.style.display = 'none';
+    if (counterEl) counterEl.textContent = `${fixedCurrentQuestion + 1} / ${currentQuizData.length}`;
 
     q.options.forEach((option, index) => {
         const li = document.createElement('li');
