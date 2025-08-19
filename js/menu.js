@@ -42,12 +42,28 @@ const menuData = {
             }
         },
         "일본어": {
-            "히라가나": {
+            "히라가나 기본 50음도": {
                 file: "quiz_page/F01-001_hiragana.html",
                 info: "단어장"
             },
-            "가타카나" : {
+            "히라가나 탁음 (濁音, ゛) + 반탁음 (半濁音, ゜)": {
+                file: "quiz_page/F01-004_hiragana+.html",
+                info: "단어장"
+            },
+            "히라가나 요음 (拗音, 작은 ゃ/ゅ/ょ)": {
+                file: "quiz_page/F01-006_hiragana++.html",
+                info: "단어장"
+            },
+            "가타카나 기본 50음도" : {
                 file: "quiz_page/F01-002_katakana.html",
+                info: "단어장"
+            },
+            "가타카나 탁음 (濁音, ゛) + 반탁음 (半濁音, ゜)" : {
+                file: "quiz_page/F01-005_katakana+.html",
+                info: "단어장"
+            },
+            "가타카나 요음 (拗音, 작은 ゃ/ゅ/ょ)" : {
+                file: "quiz_page/F01-007_katakana++.html",
                 info: "단어장"
             },
             "히라가나 + 가타카나" : {
