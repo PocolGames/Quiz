@@ -79,24 +79,27 @@ function prepareRandomQuizData() {
 
         console.log('Other answers available:', otherAnswers.length); // 디버그용
 
-        // 다른 정답들 중에서 3개 선택 (부족하면 사용 가능한 만큼만)
-        const availableWrongOptions = shuffleArray([...otherAnswers]);
-        const wrongOptions = availableWrongOptions.slice(0, 3);
+        // 동적으로 옵션 개수 감지 (4지선다 또는 5지선다)
+        const optionCount = current.options.length;
         
-        // 만약 3개가 안 되면 원래 선택지의 오답들로 채우기
-        if (wrongOptions.length < 3) {
+        // 다른 정답들 중에서 옵션 개수-1 개 선택 (부족하면 사용 가능한 만큼만)
+        const availableWrongOptions = shuffleArray([...otherAnswers]);
+        const wrongOptions = availableWrongOptions.slice(0, optionCount - 1);
+        
+        // 만약 필요한 개수가 안 되면 원래 선택지의 오답들로 채우기
+        if (wrongOptions.length < optionCount - 1) {
             const originalWrongOptions = current.options.filter((option, index) => index + 1 !== current.answer);
-            const additionalOptions = originalWrongOptions.slice(0, 3 - wrongOptions.length);
+            const additionalOptions = originalWrongOptions.slice(0, (optionCount - 1) - wrongOptions.length);
             wrongOptions.push(...additionalOptions);
         }
 
         // 정답을 랜덤 위치에 삽입
-        const correctIndex = Math.floor(Math.random() * 4);
+        const correctIndex = Math.floor(Math.random() * optionCount);
         const finalOptions = [...wrongOptions];
         finalOptions.splice(correctIndex, 0, currentAnswer);
         
-        // 4개가 안 되면 남은 자리를 원래 선택지로 채우기
-        while (finalOptions.length < 4) {
+        // 필요한 개수가 안 되면 남은 자리를 원래 선택지로 채우기
+        while (finalOptions.length < optionCount) {
             const remainingOriginal = current.options.find(opt => !finalOptions.includes(opt));
             if (remainingOriginal) {
                 finalOptions.push(remainingOriginal);
@@ -107,7 +110,7 @@ function prepareRandomQuizData() {
 
         const result = {
             question: current.question,
-            options: finalOptions.slice(0, 4), // 정확히 4개만
+            options: finalOptions.slice(0, optionCount), // 원래 옵션 개수만큼
             answer: correctIndex + 1
         };
         
