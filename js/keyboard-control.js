@@ -90,38 +90,52 @@ function handleFlashcardKeys(key) {
     const flashcardNextButton = document.getElementById('flashcard-next-button');
     const flashcardRestartButton = document.getElementById('flashcard-restart-button');
     
-    switch(key) {
-        case '1':
-        case ' ': // 스페이스바로도 정답 보기
-        case 'Enter':
-            if (showAnswerButton && showAnswerButton.style.display !== 'none') {
-                showAnswerButton.click();
-            }
-            break;
-        case 'ArrowLeft':
-        case 'a':
-        case 'A':
-            if (flashcardPrevButton && flashcardPrevButton.style.display !== 'none') {
-                flashcardPrevButton.click();
-            }
-            break;
-        case 'ArrowRight':
-        case 'd':
-        case 'D':
-            if (flashcardNextButton && flashcardNextButton.style.display !== 'none') {
-                flashcardNextButton.click();
-            }
-            break;
+    // 정답이 아직 보이지 않는 상태에서 정답 보기
+    if (!isFlashcardAnswerVisible()) {
+        switch(key) {
+            case '1':
+            case ' ': // 스페이스바로도 정답 보기
+            case 'Enter':
+                if (showAnswerButton && showAnswerButton.style.display !== 'none') {
+                    showAnswerButton.click();
+                }
+                break;
+            case 'ArrowLeft':
+            case 'a':
+            case 'A':
+                if (flashcardPrevButton && flashcardPrevButton.style.display !== 'none') {
+                    flashcardPrevButton.click();
+                }
+                break;
+        }
     }
-    
-    // 아무 키나 눌러서 다음 문제 (정답이 보이는 상태에서)
-    if (isFlashcardAnswerVisible()) {
-        if (flashcardNextButton && flashcardNextButton.style.display !== 'none') {
-            flashcardNextButton.click();
-        } else if (flashcardRestartButton && flashcardRestartButton.style.display !== 'none') {
-            if (key === 'Enter' || key === ' ') {
-                flashcardRestartButton.click();
-            }
+    // 정답이 보이는 상태에서 다음 문제 또는 이전 문제
+    else {
+        switch(key) {
+            case 'ArrowLeft':
+            case 'a':
+            case 'A':
+                if (flashcardPrevButton && flashcardPrevButton.style.display !== 'none') {
+                    flashcardPrevButton.click();
+                }
+                break;
+            case 'ArrowRight':
+            case 'd':
+            case 'D':
+                if (flashcardNextButton && flashcardNextButton.style.display !== 'none') {
+                    flashcardNextButton.click();
+                }
+                break;
+            default:
+                // 아무 키나 눌러서 다음 문제
+                if (flashcardNextButton && flashcardNextButton.style.display !== 'none') {
+                    flashcardNextButton.click();
+                } else if (flashcardRestartButton && flashcardRestartButton.style.display !== 'none') {
+                    if (key === 'Enter' || key === ' ') {
+                        flashcardRestartButton.click();
+                    }
+                }
+                break;
         }
     }
 }
