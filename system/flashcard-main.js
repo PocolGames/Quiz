@@ -103,7 +103,9 @@ function loadFlashcard() {
         answerEl.style.display = 'none';
     }
 
-    if (showAnswerBtn) showAnswerBtn.style.display = 'inline-block';
+    if (showAnswerBtn) {
+        showAnswerBtn.style.display = 'inline-block';
+    }
     if (nextBtn) nextBtn.style.display = 'none';
     if (prevBtn) prevBtn.style.display = flashcardCurrentIndex > 0 ? 'inline-block' : 'none';
     if (restartBtn) restartBtn.style.display = 'none';
