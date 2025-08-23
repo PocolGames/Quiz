@@ -1,127 +1,127 @@
 let quizData = [
     {
         question: "ガ",
-        options: ["ga", "ka", "za", "da"],
+        options: ["ga", "gi", "gu", "ge", "go"],
         answer: 1
     },
     {
         question: "ギ",
-        options: ["ki", "gi", "ji", "shi"],
+        options: ["ga", "gi", "gu", "ge", "go"],
         answer: 2
     },
     {
         question: "グ",
-        options: ["ku", "zu", "gu", "bu"],
+        options: ["ga", "gi", "gu", "ge", "go"],
         answer: 3
     },
     {
         question: "ゲ",
-        options: ["ke", "ze", "de", "ge"],
+        options: ["ga", "gi", "gu", "ge", "go"],
         answer: 4
     },
     {
         question: "ゴ",
-        options: ["go", "ko", "zo", "do"],
-        answer: 1
+        options: ["ga", "gi", "gu", "ge", "go"],
+        answer: 5
     },
     {
         question: "ザ",
-        options: ["za", "sa", "da", "ga"],
+        options: ["za", "ji", "zu", "ze", "zo"],
         answer: 1
     },
     {
         question: "ジ",
-        options: ["shi", "ji", "chi", "gi"],
+        options: ["za", "ji", "zu", "ze", "zo"],
         answer: 2
     },
     {
         question: "ズ",
-        options: ["su", "tsu", "zu", "gu"],
+        options: ["za", "ji", "zu", "ze", "zo"],
         answer: 3
     },
     {
         question: "ゼ",
-        options: ["se", "ge", "de", "ze"],
+        options: ["za", "ji", "zu", "ze", "zo"],
         answer: 4
     },
     {
         question: "ゾ",
-        options: ["zo", "so", "go", "do"],
-        answer: 1
+        options: ["za", "ji", "zu", "ze", "zo"],
+        answer: 5
     },
     {
         question: "ダ",
-        options: ["da", "ta", "ga", "za"],
+        options: ["da", "ji", "zu", "de", "do"],
         answer: 1
     },
     {
         question: "ヂ",
-        options: ["chi", "ji", "gi", "shi"],
+        options: ["da", "ji", "zu", "de", "do"],
         answer: 2
     },
     {
         question: "ヅ",
-        options: ["tsu", "su", "zu", "gu"],
+        options: ["da", "ji", "zu", "de", "do"],
         answer: 3
     },
     {
         question: "デ",
-        options: ["te", "ge", "ze", "de"],
+        options: ["da", "ji", "zu", "de", "do"],
         answer: 4
     },
     {
         question: "ド",
-        options: ["do", "to", "go", "zo"],
-        answer: 1
+        options: ["da", "ji", "zu", "de", "do"],
+        answer: 5
     },
     {
         question: "バ",
-        options: ["ba", "pa", "ma", "ha"],
+        options: ["ba", "bi", "bu", "be", "bo"],
         answer: 1
     },
     {
         question: "ビ",
-        options: ["pi", "bi", "mi", "hi"],
+        options: ["ba", "bi", "bu", "be", "bo"],
         answer: 2
     },
     {
         question: "ブ",
-        options: ["pu", "mu", "bu", "fu"],
+        options: ["ba", "bi", "bu", "be", "bo"],
         answer: 3
     },
     {
         question: "ベ",
-        options: ["pe", "me", "he", "be"],
+        options: ["ba", "bi", "bu", "be", "bo"],
         answer: 4
     },
     {
         question: "ボ",
-        options: ["bo", "po", "mo", "ho"],
-        answer: 1
+        options: ["ba", "bi", "bu", "be", "bo"],
+        answer: 5
     },
     {
         question: "パ",
-        options: ["pa", "ba", "ma", "ha"],
+        options: ["pa", "pi", "pu", "pe", "po"],
         answer: 1
     },
     {
         question: "ピ",
-        options: ["bi", "pi", "mi", "hi"],
+        options: ["pa", "pi", "pu", "pe", "po"],
         answer: 2
     },
     {
         question: "プ",
-        options: ["bu", "mu", "pu", "fu"],
+        options: ["pa", "pi", "pu", "pe", "po"],
         answer: 3
     },
     {
         question: "ペ",
-        options: ["be", "me", "he", "pe"],
+        options: ["pa", "pi", "pu", "pe", "po"],
         answer: 4
     },
     {
         question: "ポ",
-        options: ["po", "bo", "mo", "ho"],
-        answer: 1
+        options: ["pa", "pi", "pu", "pe", "po"],
+        answer: 5
     }
 ];

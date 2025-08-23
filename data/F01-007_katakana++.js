@@ -1,167 +1,167 @@
 let quizData = [
     {
         question: "キャ",
-        options: ["kya", "gya", "sha", "cha"],
+        options: ["kya", "kyu", "kyo", "ki", "ka"],
         answer: 1
     },
     {
         question: "キュ",
-        options: ["gyu", "kyu", "shu", "chu"],
+        options: ["kya", "kyu", "kyo", "ki", "ka"],
         answer: 2
     },
     {
         question: "キョ",
-        options: ["gyo", "sho", "kyo", "cho"],
+        options: ["kya", "kyu", "kyo", "ki", "ka"],
         answer: 3
     },
     {
         question: "ギャ",
-        options: ["gya", "kya", "ja", "bya"],
+        options: ["gya", "gyu", "gyo", "gi", "ga"],
         answer: 1
     },
     {
         question: "ギュ",
-        options: ["kyu", "gyu", "ju", "byu"],
+        options: ["gya", "gyu", "gyo", "gi", "ga"],
         answer: 2
     },
     {
         question: "ギョ",
-        options: ["kyo", "jo", "gyo", "byo"],
+        options: ["gya", "gyu", "gyo", "gi", "ga"],
         answer: 3
     },
     {
         question: "シャ",
-        options: ["sha", "cha", "ja", "kya"],
+        options: ["sha", "shu", "sho", "shi", "sa"],
         answer: 1
     },
     {
         question: "シュ",
-        options: ["chu", "shu", "ju", "kyu"],
+        options: ["sha", "shu", "sho", "shi", "sa"],
         answer: 2
     },
     {
         question: "ショ",
-        options: ["cho", "jo", "sho", "kyo"],
+        options: ["sha", "shu", "sho", "shi", "sa"],
         answer: 3
     },
     {
         question: "ジャ",
-        options: ["ja", "sha", "cha", "gya"],
+        options: ["ja", "ju", "jo", "ji", "za"],
         answer: 1
     },
     {
         question: "ジュ",
-        options: ["shu", "ju", "chu", "gyu"],
+        options: ["ja", "ju", "jo", "ji", "za"],
         answer: 2
     },
     {
         question: "ジョ",
-        options: ["sho", "cho", "jo", "gyo"],
+        options: ["ja", "ju", "jo", "ji", "za"],
         answer: 3
     },
     {
         question: "チャ",
-        options: ["cha", "sha", "ja", "nya"],
+        options: ["cha", "chu", "cho", "chi", "ta"],
         answer: 1
     },
     {
         question: "チュ",
-        options: ["shu", "chu", "ju", "nyu"],
+        options: ["cha", "chu", "cho", "chi", "ta"],
         answer: 2
     },
     {
         question: "チョ",
-        options: ["sho", "jo", "cho", "nyo"],
+        options: ["cha", "chu", "cho", "chi", "ta"],
         answer: 3
     },
     {
         question: "ニャ",
-        options: ["nya", "mya", "rya", "hya"],
+        options: ["nya", "nyu", "nyo", "ni", "na"],
         answer: 1
     },
     {
         question: "ニュ",
-        options: ["myu", "nyu", "ryu", "hyu"],
+        options: ["nya", "nyu", "nyo", "ni", "na"],
         answer: 2
     },
     {
         question: "ニョ",
-        options: ["myo", "ryo", "nyo", "hyo"],
+        options: ["nya", "nyu", "nyo", "ni", "na"],
         answer: 3
     },
     {
         question: "ヒャ",
-        options: ["hya", "bya", "pya", "mya"],
+        options: ["hya", "hyu", "hyo", "hi", "ha"],
         answer: 1
     },
     {
         question: "ヒュ",
-        options: ["byu", "hyu", "pyu", "myu"],
+        options: ["hya", "hyu", "hyo", "hi", "ha"],
         answer: 2
     },
     {
         question: "ヒョ",
-        options: ["byo", "pyo", "hyo", "myo"],
+        options: ["hya", "hyu", "hyo", "hi", "ha"],
         answer: 3
     },
     {
         question: "ビャ",
-        options: ["bya", "pya", "hya", "mya"],
+        options: ["bya", "byu", "byo", "bi", "ba"],
         answer: 1
     },
     {
         question: "ビュ",
-        options: ["pyu", "byu", "hyu", "myu"],
+        options: ["bya", "byu", "byo", "bi", "ba"],
         answer: 2
     },
     {
         question: "ビョ",
-        options: ["pyo", "hyo", "byo", "myo"],
+        options: ["bya", "byu", "byo", "bi", "ba"],
         answer: 3
     },
     {
         question: "ピャ",
-        options: ["pya", "bya", "hya", "mya"],
+        options: ["pya", "pyu", "pyo", "pi", "pa"],
         answer: 1
     },
     {
         question: "ピュ",
-        options: ["byu", "pyu", "hyu", "myu"],
+        options: ["pya", "pyu", "pyo", "pi", "pa"],
         answer: 2
     },
     {
         question: "ピョ",
-        options: ["byo", "hyo", "pyo", "myo"],
+        options: ["pya", "pyu", "pyo", "pi", "pa"],
         answer: 3
     },
     {
         question: "ミャ",
-        options: ["mya", "nya", "rya", "hya"],
+        options: ["mya", "myu", "myo", "mi", "ma"],
         answer: 1
     },
     {
         question: "ミュ",
-        options: ["nyu", "myu", "ryu", "hyu"],
+        options: ["mya", "myu", "myo", "mi", "ma"],
         answer: 2
     },
     {
         question: "ミョ",
-        options: ["nyo", "ryo", "myo", "hyo"],
+        options: ["mya", "myu", "myo", "mi", "ma"],
         answer: 3
     },
     {
         question: "リャ",
-        options: ["rya", "mya", "nya", "gya"],
+        options: ["rya", "ryu", "ryo", "ri", "ra"],
         answer: 1
     },
     {
         question: "リュ",
-        options: ["myu", "ryu", "nyu", "gyu"],
+        options: ["rya", "ryu", "ryo", "ri", "ra"],
         answer: 2
     },
     {
         question: "リョ",
-        options: ["myo", "nyo", "ryo", "gyo"],
+        options: ["rya", "ryu", "ryo", "ri", "ra"],
         answer: 3
     }
 ];

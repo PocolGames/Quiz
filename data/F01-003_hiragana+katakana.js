@@ -1,1042 +1,1042 @@
 let quizData = [
     {
         question: "あ",
-        options: ["a", "i", "u", "e"],
+        options: ["a", "i", "u", "e", "o"],
         answer: 1
     },
     {
         question: "い",
-        options: ["a", "i", "u", "e"],
+        options: ["a", "i", "u", "e", "o"],
         answer: 2
     },
     {
         question: "う",
-        options: ["a", "i", "u", "e"],
+        options: ["a", "i", "u", "e", "o"],
         answer: 3
     },
     {
         question: "え",
-        options: ["a", "i", "u", "e"],
+        options: ["a", "i", "u", "e", "o"],
         answer: 4
     },
     {
         question: "お",
-        options: ["o", "i", "u", "e"],
-        answer: 1
+        options: ["a", "i", "u", "e", "o"],
+        answer: 5
     },
     {
         question: "か",
-        options: ["ka", "ki", "ku", "ke"],
+        options: ["ka", "ki", "ku", "ke", "ko"],
         answer: 1
     },
     {
         question: "き",
-        options: ["ka", "ki", "ku", "ke"],
+        options: ["ka", "ki", "ku", "ke", "ko"],
         answer: 2
     },
     {
         question: "く",
-        options: ["ka", "ki", "ku", "ke"],
+        options: ["ka", "ki", "ku", "ke", "ko"],
         answer: 3
     },
     {
         question: "け",
-        options: ["ka", "ki", "ku", "ke"],
+        options: ["ka", "ki", "ku", "ke", "ko"],
         answer: 4
     },
     {
         question: "こ",
-        options: ["ko", "ki", "ku", "ke"],
-        answer: 1
+        options: ["ka", "ki", "ku", "ke", "ko"],
+        answer: 5
     },
     {
         question: "さ",
-        options: ["sa", "shi", "su", "se"],
+        options: ["sa", "shi", "su", "se", "so"],
         answer: 1
     },
     {
         question: "し",
-        options: ["sa", "shi", "su", "se"],
+        options: ["sa", "shi", "su", "se", "so"],
         answer: 2
     },
     {
         question: "す",
-        options: ["sa", "shi", "su", "se"],
+        options: ["sa", "shi", "su", "se", "so"],
         answer: 3
     },
     {
         question: "せ",
-        options: ["sa", "shi", "su", "se"],
+        options: ["sa", "shi", "su", "se", "so"],
         answer: 4
     },
     {
         question: "そ",
-        options: ["so", "shi", "su", "se"],
-        answer: 1
+        options: ["sa", "shi", "su", "se", "so"],
+        answer: 5
     },
     {
         question: "た",
-        options: ["ta", "chi", "tsu", "te"],
+        options: ["ta", "chi", "tsu", "te", "to"],
         answer: 1
     },
     {
         question: "ち",
-        options: ["ta", "chi", "tsu", "te"],
+        options: ["ta", "chi", "tsu", "te", "to"],
         answer: 2
     },
     {
         question: "つ",
-        options: ["ta", "chi", "tsu", "te"],
+        options: ["ta", "chi", "tsu", "te", "to"],
         answer: 3
     },
     {
         question: "て",
-        options: ["ta", "chi", "tsu", "te"],
+        options: ["ta", "chi", "tsu", "te", "to"],
         answer: 4
     },
     {
         question: "と",
-        options: ["to", "chi", "tsu", "te"],
-        answer: 1
+        options: ["ta", "chi", "tsu", "te", "to"],
+        answer: 5
     },
     {
         question: "な",
-        options: ["na", "ni", "nu", "ne"],
+        options: ["na", "ni", "nu", "ne", "no"],
         answer: 1
     },
     {
         question: "に",
-        options: ["na", "ni", "nu", "ne"],
+        options: ["na", "ni", "nu", "ne", "no"],
         answer: 2
     },
     {
         question: "ぬ",
-        options: ["na", "ni", "nu", "ne"],
+        options: ["na", "ni", "nu", "ne", "no"],
         answer: 3
     },
     {
         question: "ね",
-        options: ["na", "ni", "nu", "ne"],
+        options: ["na", "ni", "nu", "ne", "no"],
         answer: 4
     },
     {
         question: "の",
-        options: ["no", "ni", "nu", "ne"],
-        answer: 1
+        options: ["na", "ni", "nu", "ne", "no"],
+        answer: 5
     },
     {
         question: "は",
-        options: ["ha", "hi", "fu", "he"],
+        options: ["ha", "hi", "fu", "he", "ho"],
         answer: 1
     },
     {
         question: "ひ",
-        options: ["ha", "hi", "fu", "he"],
+        options: ["ha", "hi", "fu", "he", "ho"],
         answer: 2
     },
     {
         question: "ふ",
-        options: ["ha", "hi", "fu", "he"],
+        options: ["ha", "hi", "fu", "he", "ho"],
         answer: 3
     },
     {
         question: "へ",
-        options: ["ha", "hi", "fu", "he"],
+        options: ["ha", "hi", "fu", "he", "ho"],
         answer: 4
     },
     {
         question: "ほ",
-        options: ["ho", "hi", "fu", "he"],
-        answer: 1
+        options: ["ha", "hi", "fu", "he", "ho"],
+        answer: 5
     },
     {
         question: "ま",
-        options: ["ma", "mi", "mu", "me"],
+        options: ["ma", "mi", "mu", "me", "mo"],
         answer: 1
     },
     {
         question: "み",
-        options: ["ma", "mi", "mu", "me"],
+        options: ["ma", "mi", "mu", "me", "mo"],
         answer: 2
     },
     {
         question: "む",
-        options: ["ma", "mi", "mu", "me"],
+        options: ["ma", "mi", "mu", "me", "mo"],
         answer: 3
     },
     {
         question: "め",
-        options: ["ma", "mi", "mu", "me"],
+        options: ["ma", "mi", "mu", "me", "mo"],
         answer: 4
     },
     {
         question: "も",
-        options: ["mo", "mi", "mu", "me"],
-        answer: 1
+        options: ["ma", "mi", "mu", "me", "mo"],
+        answer: 5
     },
     {
         question: "や",
-        options: ["ya", "yu", "yo", "ra"],
+        options: ["ya", "yu", "yo", "ra", "ri"],
         answer: 1
     },
     {
         question: "ゆ",
-        options: ["ya", "yu", "yo", "ra"],
+        options: ["ya", "yu", "yo", "ra", "ri"],
         answer: 2
     },
     {
         question: "よ",
-        options: ["ya", "yu", "yo", "ra"],
+        options: ["ya", "yu", "yo", "ra", "ri"],
         answer: 3
     },
     {
         question: "ら",
-        options: ["ra", "ri", "ru", "re"],
+        options: ["ra", "ri", "ru", "re", "ro"],
         answer: 1
     },
     {
         question: "り",
-        options: ["ra", "ri", "ru", "re"],
+        options: ["ra", "ri", "ru", "re", "ro"],
         answer: 2
     },
     {
         question: "る",
-        options: ["ra", "ri", "ru", "re"],
+        options: ["ra", "ri", "ru", "re", "ro"],
         answer: 3
     },
     {
         question: "れ",
-        options: ["ra", "ri", "ru", "re"],
+        options: ["ra", "ri", "ru", "re", "ro"],
         answer: 4
     },
     {
         question: "ろ",
-        options: ["ro", "ri", "ru", "re"],
-        answer: 1
+        options: ["ra", "ri", "ru", "re", "ro"],
+        answer: 5
     },
     {
         question: "わ",
-        options: ["wa", "wo", "n", "ya"],
+        options: ["wa", "wo", "n", "ya", "yu"],
         answer: 1
     },
     {
         question: "を",
-        options: ["wa", "wo", "n", "ya"],
+        options: ["wa", "wo", "n", "ya", "yu"],
         answer: 2
     },
     {
         question: "ん",
-        options: ["wa", "wo", "n", "ya"],
+        options: ["wa", "wo", "n", "ya", "yu"],
         answer: 3
     },
     {
         question: "が",
-        options: ["ga", "gi", "gu", "ge"],
+        options: ["ga", "gi", "gu", "ge", "go"],
         answer: 1
     },
     {
         question: "ぎ",
-        options: ["ga", "gi", "gu", "ge"],
+        options: ["ga", "gi", "gu", "ge", "go"],
         answer: 2
     },
     {
         question: "ぐ",
-        options: ["ga", "gi", "gu", "ge"],
+        options: ["ga", "gi", "gu", "ge", "go"],
         answer: 3
     },
     {
         question: "げ",
-        options: ["ga", "gi", "gu", "ge"],
+        options: ["ga", "gi", "gu", "ge", "go"],
         answer: 4
     },
     {
         question: "ご",
-        options: ["go", "gi", "gu", "ge"],
-        answer: 1
+        options: ["ga", "gi", "gu", "ge", "go"],
+        answer: 5
     },
     {
         question: "ざ",
-        options: ["za", "ji", "zu", "ze"],
+        options: ["za", "ji", "zu", "ze", "zo"],
         answer: 1
     },
     {
         question: "じ",
-        options: ["za", "ji", "zu", "ze"],
+        options: ["za", "ji", "zu", "ze", "zo"],
         answer: 2
     },
     {
         question: "ず",
-        options: ["za", "ji", "zu", "ze"],
+        options: ["za", "ji", "zu", "ze", "zo"],
         answer: 3
     },
     {
         question: "ぜ",
-        options: ["za", "ji", "zu", "ze"],
+        options: ["za", "ji", "zu", "ze", "zo"],
         answer: 4
     },
     {
         question: "ぞ",
-        options: ["zo", "ji", "zu", "ze"],
-        answer: 1
+        options: ["za", "ji", "zu", "ze", "zo"],
+        answer: 5
     },
     {
         question: "だ",
-        options: ["da", "ji", "zu", "de"],
+        options: ["da", "ji", "zu", "de", "do"],
         answer: 1
     },
     {
         question: "ぢ",
-        options: ["da", "ji", "zu", "de"],
+        options: ["da", "ji", "zu", "de", "do"],
         answer: 2
     },
     {
         question: "づ",
-        options: ["da", "ji", "zu", "de"],
+        options: ["da", "ji", "zu", "de", "do"],
         answer: 3
     },
     {
         question: "で",
-        options: ["da", "ji", "zu", "de"],
+        options: ["da", "ji", "zu", "de", "do"],
         answer: 4
     },
     {
         question: "ど",
-        options: ["do", "ji", "zu", "de"],
-        answer: 1
+        options: ["da", "ji", "zu", "de", "do"],
+        answer: 5
     },
     {
         question: "ば",
-        options: ["ba", "bi", "bu", "be"],
+        options: ["ba", "bi", "bu", "be", "bo"],
         answer: 1
     },
     {
         question: "び",
-        options: ["ba", "bi", "bu", "be"],
+        options: ["ba", "bi", "bu", "be", "bo"],
         answer: 2
     },
     {
         question: "ぶ",
-        options: ["ba", "bi", "bu", "be"],
+        options: ["ba", "bi", "bu", "be", "bo"],
         answer: 3
     },
     {
         question: "べ",
-        options: ["ba", "bi", "bu", "be"],
+        options: ["ba", "bi", "bu", "be", "bo"],
         answer: 4
     },
     {
         question: "ぼ",
-        options: ["bo", "bi", "bu", "be"],
-        answer: 1
+        options: ["ba", "bi", "bu", "be", "bo"],
+        answer: 5
     },
     {
         question: "ぱ",
-        options: ["pa", "pi", "pu", "pe"],
+        options: ["pa", "pi", "pu", "pe", "po"],
         answer: 1
     },
     {
         question: "ぴ",
-        options: ["pa", "pi", "pu", "pe"],
+        options: ["pa", "pi", "pu", "pe", "po"],
         answer: 2
     },
     {
         question: "ぷ",
-        options: ["pa", "pi", "pu", "pe"],
+        options: ["pa", "pi", "pu", "pe", "po"],
         answer: 3
     },
     {
         question: "ぺ",
-        options: ["pa", "pi", "pu", "pe"],
+        options: ["pa", "pi", "pu", "pe", "po"],
         answer: 4
     },
     {
         question: "ぽ",
-        options: ["po", "pi", "pu", "pe"],
-        answer: 1
+        options: ["pa", "pi", "pu", "pe", "po"],
+        answer: 5
     },
     {
         question: "きゃ",
-        options: ["kya", "kyu", "kyo", "ki"],
+        options: ["kya", "kyu", "kyo", "ki", "ka"],
         answer: 1
     },
     {
         question: "きゅ",
-        options: ["kya", "kyu", "kyo", "ki"],
+        options: ["kya", "kyu", "kyo", "ki", "ka"],
         answer: 2
     },
     {
         question: "きょ",
-        options: ["kya", "kyu", "kyo", "ki"],
+        options: ["kya", "kyu", "kyo", "ki", "ka"],
         answer: 3
     },
     {
         question: "ぎゃ",
-        options: ["gya", "gyu", "gyo", "gi"],
+        options: ["gya", "gyu", "gyo", "gi", "ga"],
         answer: 1
     },
     {
         question: "ぎゅ",
-        options: ["gya", "gyu", "gyo", "gi"],
+        options: ["gya", "gyu", "gyo", "gi", "ga"],
         answer: 2
     },
     {
         question: "ぎょ",
-        options: ["gya", "gyu", "gyo", "gi"],
+        options: ["gya", "gyu", "gyo", "gi", "ga"],
         answer: 3
     },
     {
         question: "しゃ",
-        options: ["sha", "shu", "sho", "shi"],
+        options: ["sha", "shu", "sho", "shi", "sa"],
         answer: 1
     },
     {
         question: "しゅ",
-        options: ["sha", "shu", "sho", "shi"],
+        options: ["sha", "shu", "sho", "shi", "sa"],
         answer: 2
     },
     {
         question: "しょ",
-        options: ["sha", "shu", "sho", "shi"],
+        options: ["sha", "shu", "sho", "shi", "sa"],
         answer: 3
     },
     {
         question: "じゃ",
-        options: ["ja", "ju", "jo", "ji"],
+        options: ["ja", "ju", "jo", "ji", "za"],
         answer: 1
     },
     {
         question: "じゅ",
-        options: ["ja", "ju", "jo", "ji"],
+        options: ["ja", "ju", "jo", "ji", "za"],
         answer: 2
     },
     {
         question: "じょ",
-        options: ["ja", "ju", "jo", "ji"],
+        options: ["ja", "ju", "jo", "ji", "za"],
         answer: 3
     },
     {
         question: "ちゃ",
-        options: ["cha", "chu", "cho", "chi"],
+        options: ["cha", "chu", "cho", "chi", "ta"],
         answer: 1
     },
     {
         question: "ちゅ",
-        options: ["cha", "chu", "cho", "chi"],
+        options: ["cha", "chu", "cho", "chi", "ta"],
         answer: 2
     },
     {
         question: "ちょ",
-        options: ["cha", "chu", "cho", "chi"],
+        options: ["cha", "chu", "cho", "chi", "ta"],
         answer: 3
     },
     {
         question: "にゃ",
-        options: ["nya", "nyu", "nyo", "ni"],
+        options: ["nya", "nyu", "nyo", "ni", "na"],
         answer: 1
     },
     {
         question: "にゅ",
-        options: ["nya", "nyu", "nyo", "ni"],
+        options: ["nya", "nyu", "nyo", "ni", "na"],
         answer: 2
     },
     {
         question: "にょ",
-        options: ["nya", "nyu", "nyo", "ni"],
+        options: ["nya", "nyu", "nyo", "ni", "na"],
         answer: 3
     },
     {
         question: "ひゃ",
-        options: ["hya", "hyu", "hyo", "hi"],
+        options: ["hya", "hyu", "hyo", "hi", "ha"],
         answer: 1
     },
     {
         question: "ひゅ",
-        options: ["hya", "hyu", "hyo", "hi"],
+        options: ["hya", "hyu", "hyo", "hi", "ha"],
         answer: 2
     },
     {
         question: "ひょ",
-        options: ["hya", "hyu", "hyo", "hi"],
+        options: ["hya", "hyu", "hyo", "hi", "ha"],
         answer: 3
     },
     {
         question: "びゃ",
-        options: ["bya", "byu", "byo", "bi"],
+        options: ["bya", "byu", "byo", "bi", "ba"],
         answer: 1
     },
     {
         question: "びゅ",
-        options: ["bya", "byu", "byo", "bi"],
+        options: ["bya", "byu", "byo", "bi", "ba"],
         answer: 2
     },
     {
         question: "びょ",
-        options: ["bya", "byu", "byo", "bi"],
+        options: ["bya", "byu", "byo", "bi", "ba"],
         answer: 3
     },
     {
         question: "ぴゃ",
-        options: ["pya", "pyu", "pyo", "pi"],
+        options: ["pya", "pyu", "pyo", "pi", "pa"],
         answer: 1
     },
     {
         question: "ぴゅ",
-        options: ["pya", "pyu", "pyo", "pi"],
+        options: ["pya", "pyu", "pyo", "pi", "pa"],
         answer: 2
     },
     {
         question: "ぴょ",
-        options: ["pya", "pyu", "pyo", "pi"],
+        options: ["pya", "pyu", "pyo", "pi", "pa"],
         answer: 3
     },
     {
         question: "みゃ",
-        options: ["mya", "myu", "myo", "mi"],
+        options: ["mya", "myu", "myo", "mi", "ma"],
         answer: 1
     },
     {
         question: "みゅ",
-        options: ["mya", "myu", "myo", "mi"],
+        options: ["mya", "myu", "myo", "mi", "ma"],
         answer: 2
     },
     {
         question: "みょ",
-        options: ["mya", "myu", "myo", "mi"],
+        options: ["mya", "myu", "myo", "mi", "ma"],
         answer: 3
     },
     {
         question: "りゃ",
-        options: ["rya", "ryu", "ryo", "ri"],
+        options: ["rya", "ryu", "ryo", "ri", "ra"],
         answer: 1
     },
     {
         question: "りゅ",
-        options: ["rya", "ryu", "ryo", "ri"],
+        options: ["rya", "ryu", "ryo", "ri", "ra"],
         answer: 2
     },
     {
         question: "りょ",
-        options: ["rya", "ryu", "ryo", "ri"],
+        options: ["rya", "ryu", "ryo", "ri", "ra"],
         answer: 3
     },
     {
         question: "ア",
-        options: ["a", "o", "wa", "na"],
+        options: ["a", "i", "u", "e", "o"],
         answer: 1
     },
     {
         question: "イ",
-        options: ["e", "i", "ri", "ki"],
+        options: ["a", "i", "u", "e", "o"],
         answer: 2
     },
     {
         question: "ウ",
-        options: ["yu", "ru", "u", "mu"],
+        options: ["a", "i", "u", "e", "o"],
         answer: 3
     },
     {
         question: "エ",
-        options: ["i", "a", "ke", "e"],
+        options: ["a", "i", "u", "e", "o"],
         answer: 4
     },
     {
         question: "オ",
-        options: ["o", "a", "ko", "no"],
-        answer: 1
+        options: ["a", "i", "u", "e", "o"],
+        answer: 5
     },
     {
         question: "カ",
-        options: ["ka", "ga", "sa", "na"],
+        options: ["ka", "ki", "ku", "ke", "ko"],
         answer: 1
     },
     {
         question: "キ",
-        options: ["chi", "ki", "shi", "ri"],
+        options: ["ka", "ki", "ku", "ke", "ko"],
         answer: 2
     },
     {
         question: "ク",
-        options: ["su", "yu", "ku", "fu"],
+        options: ["ka", "ki", "ku", "ke", "ko"],
         answer: 3
     },
     {
         question: "ケ",
-        options: ["ge", "se", "ne", "ke"],
+        options: ["ka", "ki", "ku", "ke", "ko"],
         answer: 4
     },
     {
         question: "コ",
-        options: ["ko", "go", "so", "to"],
-        answer: 1
+        options: ["ka", "ki", "ku", "ke", "ko"],
+        answer: 5
     },
     {
         question: "サ",
-        options: ["sa", "za", "ta", "na"],
+        options: ["sa", "shi", "su", "se", "so"],
         answer: 1
     },
     {
         question: "シ",
-        options: ["chi", "shi", "ji", "ni"],
+        options: ["sa", "shi", "su", "se", "so"],
         answer: 2
     },
     {
         question: "ス",
-        options: ["zu", "tsu", "su", "nu"],
+        options: ["sa", "shi", "su", "se", "so"],
         answer: 3
     },
     {
         question: "セ",
-        options: ["ze", "ke", "te", "se"],
+        options: ["sa", "shi", "su", "se", "so"],
         answer: 4
     },
     {
         question: "ソ",
-        options: ["so", "zo", "to", "no"],
-        answer: 1
+        options: ["sa", "shi", "su", "se", "so"],
+        answer: 5
     },
     {
         question: "タ",
-        options: ["ta", "da", "na", "sa"],
+        options: ["ta", "chi", "tsu", "te", "to"],
         answer: 1
     },
     {
         question: "チ",
-        options: ["shi", "chi", "ji", "ri"],
+        options: ["ta", "chi", "tsu", "te", "to"],
         answer: 2
     },
     {
         question: "ツ",
-        options: ["su", "zu", "tsu", "ku"],
+        options: ["ta", "chi", "tsu", "te", "to"],
         answer: 3
     },
     {
         question: "テ",
-        options: ["de", "se", "ke", "te"],
+        options: ["ta", "chi", "tsu", "te", "to"],
         answer: 4
     },
     {
         question: "ト",
-        options: ["to", "do", "ko", "so"],
-        answer: 1
+        options: ["ta", "chi", "tsu", "te", "to"],
+        answer: 5
     },
     {
         question: "ナ",
-        options: ["na", "ma", "sa", "wa"],
+        options: ["na", "ni", "nu", "ne", "no"],
         answer: 1
     },
     {
         question: "ニ",
-        options: ["ri", "ni", "mi", "shi"],
+        options: ["na", "ni", "nu", "ne", "no"],
         answer: 2
     },
     {
         question: "ヌ",
-        options: ["mu", "yu", "nu", "fu"],
+        options: ["na", "ni", "nu", "ne", "no"],
         answer: 3
     },
     {
         question: "ネ",
-        options: ["me", "se", "ke", "ne"],
+        options: ["na", "ni", "nu", "ne", "no"],
         answer: 4
     },
     {
         question: "ノ",
-        options: ["no", "mo", "so", "ko"],
-        answer: 1
+        options: ["na", "ni", "nu", "ne", "no"],
+        answer: 5
     },
     {
         question: "ハ",
-        options: ["ha", "ba", "pa", "wa"],
+        options: ["ha", "hi", "fu", "he", "ho"],
         answer: 1
     },
     {
         question: "ヒ",
-        options: ["bi", "hi", "pi", "ki"],
+        options: ["ha", "hi", "fu", "he", "ho"],
         answer: 2
     },
     {
         question: "フ",
-        options: ["bu", "pu", "fu", "yu"],
+        options: ["ha", "hi", "fu", "he", "ho"],
         answer: 3
     },
     {
         question: "ヘ",
-        options: ["be", "pe", "me", "he"],
+        options: ["ha", "hi", "fu", "he", "ho"],
         answer: 4
     },
     {
         question: "ホ",
-        options: ["ho", "bo", "po", "mo"],
-        answer: 1
+        options: ["ha", "hi", "fu", "he", "ho"],
+        answer: 5
     },
     {
         question: "マ",
-        options: ["ma", "na", "wa", "ya"],
+        options: ["ma", "mi", "mu", "me", "mo"],
         answer: 1
     },
     {
         question: "ミ",
-        options: ["ni", "mi", "ri", "hi"],
+        options: ["ma", "mi", "mu", "me", "mo"],
         answer: 2
     },
     {
         question: "ム",
-        options: ["nu", "yu", "mu", "fu"],
+        options: ["ma", "mi", "mu", "me", "mo"],
         answer: 3
     },
     {
         question: "メ",
-        options: ["ne", "ke", "he", "me"],
+        options: ["ma", "mi", "mu", "me", "mo"],
         answer: 4
     },
     {
         question: "モ",
-        options: ["mo", "no", "ho", "yo"],
-        answer: 1
+        options: ["ma", "mi", "mu", "me", "mo"],
+        answer: 5
     },
     {
         question: "ヤ",
-        options: ["ya", "ma", "wa", "ra"],
+        options: ["ya", "yu", "yo", "ra", "ri"],
         answer: 1
     },
     {
         question: "ユ",
-        options: ["mu", "yu", "nu", "ru"],
+        options: ["ya", "yu", "yo", "ra", "ri"],
         answer: 2
     },
     {
         question: "ヨ",
-        options: ["mo", "no", "yo", "ro"],
+        options: ["ya", "yu", "yo", "ra", "ri"],
         answer: 3
     },
     {
         question: "ラ",
-        options: ["ra", "na", "wa", "ya"],
+        options: ["ra", "ri", "ru", "re", "ro"],
         answer: 1
     },
     {
         question: "リ",
-        options: ["ni", "ri", "mi", "ki"],
+        options: ["ra", "ri", "ru", "re", "ro"],
         answer: 2
     },
     {
         question: "ル",
-        options: ["mu", "nu", "ru", "yu"],
+        options: ["ra", "ri", "ru", "re", "ro"],
         answer: 3
     },
     {
         question: "レ",
-        options: ["ne", "me", "ke", "re"],
+        options: ["ra", "ri", "ru", "re", "ro"],
         answer: 4
     },
     {
         question: "ロ",
-        options: ["ro", "mo", "no", "yo"],
-        answer: 1
+        options: ["ra", "ri", "ru", "re", "ro"],
+        answer: 5
     },
     {
         question: "ワ",
-        options: ["wa", "na", "ma", "ya"],
+        options: ["wa", "wo", "n", "ya", "yu"],
         answer: 1
     },
     {
         question: "ヲ",
-        options: ["o", "wo", "no", "ko"],
+        options: ["wa", "wo", "n", "ya", "yu"],
         answer: 2
     },
     {
         question: "ン",
-        options: ["mu", "nu", "n", "fu"],
+        options: ["wa", "wo", "n", "ya", "yu"],
         answer: 3
     },
     {
         question: "ガ",
-        options: ["ga", "ka", "za", "da"],
+        options: ["ga", "gi", "gu", "ge", "go"],
         answer: 1
     },
     {
         question: "ギ",
-        options: ["ki", "gi", "ji", "shi"],
+        options: ["ga", "gi", "gu", "ge", "go"],
         answer: 2
     },
     {
         question: "グ",
-        options: ["ku", "zu", "gu", "bu"],
+        options: ["ga", "gi", "gu", "ge", "go"],
         answer: 3
     },
     {
         question: "ゲ",
-        options: ["ke", "ze", "de", "ge"],
+        options: ["ga", "gi", "gu", "ge", "go"],
         answer: 4
     },
     {
         question: "ゴ",
-        options: ["go", "ko", "zo", "do"],
-        answer: 1
+        options: ["ga", "gi", "gu", "ge", "go"],
+        answer: 5
     },
     {
         question: "ザ",
-        options: ["za", "sa", "da", "ga"],
+        options: ["za", "ji", "zu", "ze", "zo"],
         answer: 1
     },
     {
         question: "ジ",
-        options: ["shi", "ji", "chi", "gi"],
+        options: ["za", "ji", "zu", "ze", "zo"],
         answer: 2
     },
     {
         question: "ズ",
-        options: ["su", "tsu", "zu", "gu"],
+        options: ["za", "ji", "zu", "ze", "zo"],
         answer: 3
     },
     {
         question: "ゼ",
-        options: ["se", "ge", "de", "ze"],
+        options: ["za", "ji", "zu", "ze", "zo"],
         answer: 4
     },
     {
         question: "ゾ",
-        options: ["zo", "so", "go", "do"],
-        answer: 1
+        options: ["za", "ji", "zu", "ze", "zo"],
+        answer: 5
     },
     {
         question: "ダ",
-        options: ["da", "ta", "ga", "za"],
+        options: ["da", "ji", "zu", "de", "do"],
         answer: 1
     },
     {
         question: "ヂ",
-        options: ["chi", "ji", "gi", "shi"],
+        options: ["da", "ji", "zu", "de", "do"],
         answer: 2
     },
     {
         question: "ヅ",
-        options: ["tsu", "su", "zu", "gu"],
+        options: ["da", "ji", "zu", "de", "do"],
         answer: 3
     },
     {
         question: "デ",
-        options: ["te", "ge", "ze", "de"],
+        options: ["da", "ji", "zu", "de", "do"],
         answer: 4
     },
     {
         question: "ド",
-        options: ["do", "to", "go", "zo"],
-        answer: 1
+        options: ["da", "ji", "zu", "de", "do"],
+        answer: 5
     },
     {
         question: "バ",
-        options: ["ba", "pa", "ma", "ha"],
+        options: ["ba", "bi", "bu", "be", "bo"],
         answer: 1
     },
     {
         question: "ビ",
-        options: ["pi", "bi", "mi", "hi"],
+        options: ["ba", "bi", "bu", "be", "bo"],
         answer: 2
     },
     {
         question: "ブ",
-        options: ["pu", "mu", "bu", "fu"],
+        options: ["ba", "bi", "bu", "be", "bo"],
         answer: 3
     },
     {
         question: "ベ",
-        options: ["pe", "me", "he", "be"],
+        options: ["ba", "bi", "bu", "be", "bo"],
         answer: 4
     },
     {
         question: "ボ",
-        options: ["bo", "po", "mo", "ho"],
-        answer: 1
+        options: ["ba", "bi", "bu", "be", "bo"],
+        answer: 5
     },
     {
         question: "パ",
-        options: ["pa", "ba", "ma", "ha"],
+        options: ["pa", "pi", "pu", "pe", "po"],
         answer: 1
     },
     {
         question: "ピ",
-        options: ["bi", "pi", "mi", "hi"],
+        options: ["pa", "pi", "pu", "pe", "po"],
         answer: 2
     },
     {
         question: "プ",
-        options: ["bu", "mu", "pu", "fu"],
+        options: ["pa", "pi", "pu", "pe", "po"],
         answer: 3
     },
     {
         question: "ペ",
-        options: ["be", "me", "he", "pe"],
+        options: ["pa", "pi", "pu", "pe", "po"],
         answer: 4
     },
     {
         question: "ポ",
-        options: ["po", "bo", "mo", "ho"],
-        answer: 1
+        options: ["pa", "pi", "pu", "pe", "po"],
+        answer: 5
     },
     {
         question: "キャ",
-        options: ["kya", "gya", "sha", "cha"],
+        options: ["kya", "kyu", "kyo", "ki", "ka"],
         answer: 1
     },
     {
         question: "キュ",
-        options: ["gyu", "kyu", "shu", "chu"],
+        options: ["kya", "kyu", "kyo", "ki", "ka"],
         answer: 2
     },
     {
         question: "キョ",
-        options: ["gyo", "sho", "kyo", "cho"],
+        options: ["kya", "kyu", "kyo", "ki", "ka"],
         answer: 3
     },
     {
         question: "ギャ",
-        options: ["gya", "kya", "ja", "bya"],
+        options: ["gya", "gyu", "gyo", "gi", "ga"],
         answer: 1
     },
     {
         question: "ギュ",
-        options: ["kyu", "gyu", "ju", "byu"],
+        options: ["gya", "gyu", "gyo", "gi", "ga"],
         answer: 2
     },
     {
         question: "ギョ",
-        options: ["kyo", "jo", "gyo", "byo"],
+        options: ["gya", "gyu", "gyo", "gi", "ga"],
         answer: 3
     },
     {
         question: "シャ",
-        options: ["sha", "cha", "ja", "kya"],
+        options: ["sha", "shu", "sho", "shi", "sa"],
         answer: 1
     },
     {
         question: "シュ",
-        options: ["chu", "shu", "ju", "kyu"],
+        options: ["sha", "shu", "sho", "shi", "sa"],
         answer: 2
     },
     {
         question: "ショ",
-        options: ["cho", "jo", "sho", "kyo"],
+        options: ["sha", "shu", "sho", "shi", "sa"],
         answer: 3
     },
     {
         question: "ジャ",
-        options: ["ja", "sha", "cha", "gya"],
+        options: ["ja", "ju", "jo", "ji", "za"],
         answer: 1
     },
     {
         question: "ジュ",
-        options: ["shu", "ju", "chu", "gyu"],
+        options: ["ja", "ju", "jo", "ji", "za"],
         answer: 2
     },
     {
         question: "ジョ",
-        options: ["sho", "cho", "jo", "gyo"],
+        options: ["ja", "ju", "jo", "ji", "za"],
         answer: 3
     },
     {
         question: "チャ",
-        options: ["cha", "sha", "ja", "nya"],
+        options: ["cha", "chu", "cho", "chi", "ta"],
         answer: 1
     },
     {
         question: "チュ",
-        options: ["shu", "chu", "ju", "nyu"],
+        options: ["cha", "chu", "cho", "chi", "ta"],
         answer: 2
     },
     {
         question: "チョ",
-        options: ["sho", "jo", "cho", "nyo"],
+        options: ["cha", "chu", "cho", "chi", "ta"],
         answer: 3
     },
     {
         question: "ニャ",
-        options: ["nya", "mya", "rya", "hya"],
+        options: ["nya", "nyu", "nyo", "ni", "na"],
         answer: 1
     },
     {
         question: "ニュ",
-        options: ["myu", "nyu", "ryu", "hyu"],
+        options: ["nya", "nyu", "nyo", "ni", "na"],
         answer: 2
     },
     {
         question: "ニョ",
-        options: ["myo", "ryo", "nyo", "hyo"],
+        options: ["nya", "nyu", "nyo", "ni", "na"],
         answer: 3
     },
     {
         question: "ヒャ",
-        options: ["hya", "bya", "pya", "mya"],
+        options: ["hya", "hyu", "hyo", "hi", "ha"],
         answer: 1
     },
     {
         question: "ヒュ",
-        options: ["byu", "hyu", "pyu", "myu"],
+        options: ["hya", "hyu", "hyo", "hi", "ha"],
         answer: 2
     },
     {
         question: "ヒョ",
-        options: ["byo", "pyo", "hyo", "myo"],
+        options: ["hya", "hyu", "hyo", "hi", "ha"],
         answer: 3
     },
     {
         question: "ビャ",
-        options: ["bya", "pya", "hya", "mya"],
+        options: ["bya", "byu", "byo", "bi", "ba"],
         answer: 1
     },
     {
         question: "ビュ",
-        options: ["pyu", "byu", "hyu", "myu"],
+        options: ["bya", "byu", "byo", "bi", "ba"],
         answer: 2
     },
     {
         question: "ビョ",
-        options: ["pyo", "hyo", "byo", "myo"],
+        options: ["bya", "byu", "byo", "bi", "ba"],
         answer: 3
     },
     {
         question: "ピャ",
-        options: ["pya", "bya", "hya", "mya"],
+        options: ["pya", "pyu", "pyo", "pi", "pa"],
         answer: 1
     },
     {
         question: "ピュ",
-        options: ["byu", "pyu", "hyu", "myu"],
+        options: ["pya", "pyu", "pyo", "pi", "pa"],
         answer: 2
     },
     {
         question: "ピョ",
-        options: ["byo", "hyo", "pyo", "myo"],
+        options: ["pya", "pyu", "pyo", "pi", "pa"],
         answer: 3
     },
     {
         question: "ミャ",
-        options: ["mya", "nya", "rya", "hya"],
+        options: ["mya", "myu", "myo", "mi", "ma"],
         answer: 1
     },
     {
         question: "ミュ",
-        options: ["nyu", "myu", "ryu", "hyu"],
+        options: ["mya", "myu", "myo", "mi", "ma"],
         answer: 2
     },
     {
         question: "ミョ",
-        options: ["nyo", "ryo", "myo", "hyo"],
+        options: ["mya", "myu", "myo", "mi", "ma"],
         answer: 3
     },
     {
         question: "リャ",
-        options: ["rya", "mya", "nya", "gya"],
+        options: ["rya", "ryu", "ryo", "ri", "ra"],
         answer: 1
     },
     {
         question: "リュ",
-        options: ["myu", "ryu", "nyu", "gyu"],
+        options: ["rya", "ryu", "ryo", "ri", "ra"],
         answer: 2
     },
     {
         question: "リョ",
-        options: ["myo", "nyo", "ryo", "gyo"],
+        options: ["rya", "ryu", "ryo", "ri", "ra"],
         answer: 3
     }
 ];
